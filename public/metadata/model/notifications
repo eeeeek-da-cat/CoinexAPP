@@ -1,0 +1,120 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "notifications"
+    },
+    "designerId": "54cef519-c616-4b93-a500-8297c8bf3c47",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "title",
+                "type": "string"
+            },
+            "designerId": "974c09d0-b069-4e1c-83c2-d909b22d8d5c"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "body",
+                "type": "string"
+            },
+            "designerId": "4f4a07b4-8979-4d92-a672-cbf135ea0063"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "created_at",
+                "type": "date"
+            },
+            "designerId": "89d4d293-443e-4463-aea4-4b9b7377c64c"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "updated_at",
+                "type": "date"
+            },
+            "designerId": "89b15a76-b5a4-4837-9c3f-e14e5df05206"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "ack",
+                "type": "boolean"
+            },
+            "designerId": "1579a747-8b0c-4000-903f-61004267656e"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "user_id",
+                "type": "int"
+            },
+            "designerId": "93270dfa-07c6-415f-9e0f-c30b97a2a33b"
+        },
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "proxy",
+                "url": "/api/notifications"
+            },
+            "designerId": "093f74ea-ec2c-41aa-ba7e-7e904adc8e86",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "reader",
+                        "root": "notifications"
+                    },
+                    "designerId": "fe45a1e4-67b7-4ac4-a65b-8d7392b11844"
+                }
+            ]
+        }
+    ]
+}

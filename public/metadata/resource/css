@@ -1,0 +1,13 @@
+{
+    "type": "cssresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "css",
+        "url": "css/override.css"
+    },
+    "designerId": "a1b8d322-59ce-44cb-9641-1ba0ee687644"
+}

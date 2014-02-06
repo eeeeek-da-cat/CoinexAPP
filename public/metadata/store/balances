@@ -1,0 +1,63 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": false,
+        "designer|userClassName": "balances",
+        "model": "balances",
+        "storeId": "balances"
+    },
+    "designerId": "bab4fb60-828d-471e-806b-e71c3de92bec",
+    "cn": [
+        {
+            "type": "Ext.util.Sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "sorter",
+                "property": "currency_name",
+                "root": null
+            },
+            "designerId": "4866641d-09ad-47aa-a5fa-d1c7ed5871b1"
+        },
+        {
+            "type": "Ext.util.Filter",
+            "reference": {
+                "name": "filters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "filter"
+            },
+            "designerId": "3b13e44f-4e52-49be-8eff-fc478f1d9801",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "item"
+                        ],
+                        "fn": "filterFn",
+                        "implHandler": [
+                            "return item.get(\"amount\") > 0;"
+                        ]
+                    },
+                    "designerId": "51dce950-ce28-4ace-b7a5-5f7f759e88b2"
+                }
+            ]
+        }
+    ]
+}

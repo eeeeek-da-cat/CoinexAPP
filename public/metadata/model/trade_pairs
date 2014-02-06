@@ -1,0 +1,185 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "trade_pairs"
+    },
+    "designerId": "32845b37-b457-4533-b1f7-d52fa6ecce6b",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "buy_fee",
+                "type": "float"
+            },
+            "designerId": "3fcac2b5-0954-43cf-96fc-8a0fc370e59f"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "sell_fee",
+                "type": "float"
+            },
+            "designerId": "d553b093-58cf-4141-bcf0-3d488399033d"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "last_price",
+                "type": "int"
+            },
+            "designerId": "0e177e97-7abd-4fbe-b55d-9263f0336f49"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "currency_id",
+                "type": "int"
+            },
+            "designerId": "8c87cc39-2650-49de-b5fe-107783fc14cf"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "market_id",
+                "type": "int"
+            },
+            "designerId": "be5f2131-cbac-4e9c-9f90-496c5b302711"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "url_slug",
+                "type": "string"
+            },
+            "designerId": "94e25e03-a785-4988-8985-872169f122d0"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "rate_min",
+                "type": "int"
+            },
+            "designerId": "63685d85-d204-4030-87d0-4bb88e9d7dd6"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "rate_max",
+                "type": "int"
+            },
+            "designerId": "8d441b37-f15e-4574-9f54-fd205e750382"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "currency_volume",
+                "type": "int"
+            },
+            "designerId": "c30c77ff-f0bf-4b9e-bb06-ad6891ee3d35"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "market_volume",
+                "type": "int"
+            },
+            "designerId": "d17c1f00-3e05-4978-a7a9-09b890666c61"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "updated_at",
+                "type": "date"
+            },
+            "designerId": "797a4626-e8f5-4cad-aafb-2a8d5b3f66be"
+        },
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "proxy",
+                "url": "/api/trade_pairs"
+            },
+            "designerId": "110cd50a-8271-43cb-9baa-450409a0b6e6",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "reader",
+                        "root": "trade_pairs"
+                    },
+                    "designerId": "9982d830-e755-4ab1-9dac-6242353d7284"
+                }
+            ]
+        }
+    ]
+}

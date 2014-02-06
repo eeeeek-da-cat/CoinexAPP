@@ -1,0 +1,14 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "notifications",
+        "model": "notifications",
+        "storeId": "notifications"
+    },
+    "designerId": "d72f8fb3-eac4-4072-97bb-f88e7fb92f4d"
+}

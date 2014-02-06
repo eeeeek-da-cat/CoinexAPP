@@ -1,0 +1,94 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "orders"
+    },
+    "designerId": "b22c0bea-03ce-437a-899b-60756140bdae",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "trade_pair_id",
+                "type": "int"
+            },
+            "designerId": "e5cf7950-5d0b-4027-8abd-f394a75758c1"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "amount",
+                "type": "int"
+            },
+            "designerId": "1d96774f-4659-47ed-af18-c439b7a2bebc"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "bid",
+                "type": "boolean"
+            },
+            "designerId": "e69f8f90-2cec-4917-b9f9-bebdce81d827"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "rate",
+                "type": "int"
+            },
+            "designerId": "5c9697af-e8ca-457c-9347-4f6876abe0ab"
+        },
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "proxy",
+                "url": "/api/orders"
+            },
+            "designerId": "85f594fc-d3d0-4a8f-a3c7-191048876b9f",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "reader",
+                        "root": "order"
+                    },
+                    "designerId": "73d57e36-784c-47f4-8218-69f6b2d6b6d0"
+                }
+            ]
+        }
+    ]
+}

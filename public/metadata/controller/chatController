@@ -1,0 +1,137 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "chatController"
+    },
+    "designerId": "828047a2-5d16-4b1c-8f0e-37ced79c53aa",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "reloadStore",
+                "implHandler": [
+                    "Ext.getStore('messages').reload();"
+                ]
+            },
+            "designerId": "5e622055-6dfd-4165-9eec-f1aeb528a826"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#chatSubmit",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onButtonClick",
+                "implHandler": [
+                    "var date = new Date(),",
+                    "    textfield = button.previousNode('textfield'),",
+                    "    success = function(response, scope) {",
+                    "        textfield.setValue('');",
+                    "        Ext.getStore('messages').reload();",
+                    "    },",
+                    "    error = function() {",
+                    "        textfield.focus();",
+                    "    };",
+                    "",
+                    "Ext.Ajax.request({",
+                    "    url: '/api/messages',",
+                    "    success: success,",
+                    "    failure: error,",
+                    "    jsonData: {",
+                    "        body: textfield.getValue()",
+                    "    }",
+                    "});"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "designerId": "60803f0f-683c-4e9f-b13b-0ca6c3c5b37b"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#chatPanel",
+                "designer|targetType": "Ext.panel.Panel",
+                "fn": "onPanelBeforeExpand",
+                "implHandler": [
+                    "Ext.TaskManager.start({",
+                    "    run: this.reloadStore,",
+                    "    scope: this,",
+                    "    interval: 2500",
+                    "});",
+                    "",
+                    "this.reloadStore();"
+                ],
+                "name": "beforeexpand",
+                "scope": "me"
+            },
+            "designerId": "639978dc-9335-41b3-bf0a-55394e868f8e"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#message",
+                "designer|targetType": "Ext.form.field.Text",
+                "fn": "onTextfieldSpecialkey",
+                "implHandler": [
+                    "if (e.getKey() == e.ENTER) {",
+                    "    var button = field.nextNode('button');",
+                    "    button.fireEvent('click', button);",
+                    "}"
+                ],
+                "name": "specialkey",
+                "scope": "me"
+            },
+            "designerId": "3abd6d64-1b59-4945-8d2e-4927af09dc2d"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#chatGrid",
+                "designer|targetType": "Ext.grid.View",
+                "fn": "onViewItemClick",
+                "implHandler": [
+                    "var message\t= Ext.ComponentQuery.query('[name=body]')[0],",
+                    "    value\t= message.getValue(),",
+                    "    name\t= record.get('name') + ', ';",
+                    "",
+                    "if (value.indexOf(name) === -1) {",
+                    "    message.setValue(value + name);",
+                    "}"
+                ],
+                "name": "itemclick",
+                "scope": "me"
+            },
+            "designerId": "e7a7285c-4863-4a0f-8c30-6d4bffb056ef"
+        }
+    ]
+}

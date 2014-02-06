@@ -1,0 +1,302 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "currencies"
+    },
+    "designerId": "b77d7e8e-2cfd-486a-86de-d5e9da4caf49",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "name",
+                "type": "string"
+            },
+            "designerId": "cecdca0c-5ede-45ab-b16f-8d17397e4216"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "desc",
+                "type": "string"
+            },
+            "designerId": "4b87900f-7895-4c9f-994d-0a290cb3561a"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "tx_fee",
+                "type": "float"
+            },
+            "designerId": "40cd7076-c3f7-40cb-aa5b-9af9944f753e"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "tx_conf",
+                "type": "int"
+            },
+            "designerId": "e16265c1-d6d6-4be7-bcf1-dca3fb4e8990"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "blk_conf",
+                "type": "int"
+            },
+            "designerId": "b67884d7-034d-4d8b-a4d5-a6f2c7fd2df7"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "hashrate",
+                "type": "int"
+            },
+            "designerId": "cad65b51-1493-4416-84b4-c68dacb27082"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "net_hashrate",
+                "type": "int"
+            },
+            "designerId": "87649088-b213-41a5-bf55-5a327bf63435"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "last_block_at",
+                "type": "date"
+            },
+            "designerId": "234bf563-3423-45b2-aad6-5085341b4a53"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "mining_enabled",
+                "type": "boolean"
+            },
+            "designerId": "6047713a-60f5-42f2-8d6b-0532235b39dc"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "mining_url",
+                "type": "string"
+            },
+            "designerId": "4127f798-91d0-490f-96a9-649fd98cd4cc"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "mining_fee",
+                "type": "int"
+            },
+            "designerId": "c24ab043-9929-469b-a71f-a60b7d1cb918"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "donations",
+                "type": "string"
+            },
+            "designerId": "4adc92ba-558e-43f0-955e-214bdc6b19d5"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "algo",
+                "type": "string"
+            },
+            "designerId": "db77ae31-a5a3-4483-bbfb-d94ae06891e6"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "diff",
+                "type": "float"
+            },
+            "designerId": "2a829d90-c7fe-4fa0-989e-c91369808447"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "updated_at",
+                "type": "date"
+            },
+            "designerId": "4d5ce808-bb14-4d0b-a681-3055dc145ba7"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "mining_score",
+                "type": "float"
+            },
+            "designerId": "5ed7fbab-dc9e-4b86-8738-1e7768e1c44b"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "mining_score_market",
+                "type": "string"
+            },
+            "designerId": "44ac2540-23e8-44f1-9033-6cbc256c138d"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "mining_skip_switch",
+                "type": "boolean"
+            },
+            "designerId": "3451d721-d86a-4ec6-868f-ee16a2ea238a"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "virtual",
+                "type": "boolean"
+            },
+            "designerId": "3087a7a9-62ed-4d6c-b75b-e9380510f2c6"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "switched_at",
+                "type": "date"
+            },
+            "designerId": "e0d5e0ba-9a6d-46b0-8bfe-9f0a010720db"
+        },
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "proxy",
+                "url": "/api/currencies"
+            },
+            "designerId": "962d21cd-bbc5-44b9-8cb4-2f118cf7f2da",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "reader",
+                        "root": "currencies"
+                    },
+                    "designerId": "71576b0b-9edc-4caf-ba53-65d9358bdc2b"
+                }
+            ]
+        }
+    ]
+}

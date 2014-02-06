@@ -1,0 +1,168 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "balances"
+    },
+    "designerId": "617a731b-13e7-4138-82bd-86ca815211cf",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "currency_id",
+                "type": "int"
+            },
+            "designerId": "1cf149d9-ee14-4177-b9f6-5b82b65ab4e5"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "user_id",
+                "type": "int"
+            },
+            "designerId": "dfd576a4-716b-49c5-b850-9e2197ca227e"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "amount",
+                "type": "int"
+            },
+            "designerId": "5d484b27-56cf-456b-ba89-d68b6a86e7b4"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "held",
+                "type": "int"
+            },
+            "designerId": "553a38e1-5394-43e1-9c26-dc80157a388d"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "updated_at",
+                "type": "date"
+            },
+            "designerId": "f410d019-46b5-42b2-9759-119b4ffe4473"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "deposit_address",
+                "type": "string"
+            },
+            "designerId": "039d5a91-7561-4d3a-b7b1-0d0bb098dad6"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "currency_name",
+                "type": "string"
+            },
+            "designerId": "14c45601-7bc9-4474-9049-262ea77af08c"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": "amount",
+                "name": "balance",
+                "type": "float"
+            },
+            "designerId": "10c1a395-7146-4b45-a89c-735850b9e5c7",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "v",
+                            "rec"
+                        ],
+                        "fn": "convert",
+                        "implHandler": [
+                            "return (v/100000000).toString();"
+                        ]
+                    },
+                    "designerId": "bbb6b5a1-a8ed-41c3-80ca-6c026853e241"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "proxy",
+                "url": "/api/balances"
+            },
+            "designerId": "d908a1ff-df26-4991-9575-9d5fd0c91c80",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "reader",
+                        "root": "balances"
+                    },
+                    "designerId": "66eca689-d4af-4c77-a16a-fe6906abd4d5"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,72 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "controllers": [
+            "chatController",
+            "balancesController"
+        ],
+        "models": [
+            "balances",
+            "currencies",
+            "trade_pairs",
+            "orders",
+            "messages",
+            "notifications",
+            "worker_stats",
+            "workers"
+        ],
+        "name": "CoinEX",
+        "stores": [
+            "balances",
+            "currencies",
+            "trade_pairs",
+            "messages",
+            "worker_stats",
+            "workers",
+            "notifications",
+            "orders"
+        ],
+        "views": [
+            "MainView"
+        ]
+    },
+    "designerId": "application",
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "launch",
+                "implHandler": [
+                    "var delay = 0,",
+                    "    stores = [",
+                    "    'currencies',",
+                    "    'trade_pairs',",
+                    "    'workers',",
+                    "    'worker_stats',",
+                    "    'balances',",
+                    "    'messages',",
+                    "    'notifications'",
+                    "];",
+                    "",
+                    "Ext.each(stores, function(value) {",
+                    "    setTimeout(function () {",
+                    "        Ext.getStore(value).load();",
+                    "    }, delay);",
+                    "    delay += 500;",
+                    "});"
+                ]
+            },
+            "designerId": "14c1d48e-eaae-4b9b-bcbd-135f9a0060d7"
+        }
+    ]
+}

@@ -1,0 +1,57 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "balancesController"
+    },
+    "designerId": "24370b47-7067-48fb-99fd-905ffcff3e90",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#balancesPanel",
+                "designer|targetType": "Ext.panel.Panel",
+                "fn": "onPanelBeforeExpand",
+                "implHandler": [
+                    "Ext.TaskManager.start({",
+                    "    run: this.reloadStore,",
+                    "    scope: this,",
+                    "    interval: 60000",
+                    "});",
+                    "",
+                    "this.reloadStore();"
+                ],
+                "name": "beforeexpand",
+                "scope": "me"
+            },
+            "designerId": "6cb0807a-24a2-4981-a657-6e01c3418484"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "reloadStore",
+                "implHandler": [
+                    "Ext.getStore('balances').reload();",
+                    "setTimeout(function () {",
+                    "    Ext.getStore('workers').reload();",
+                    "}, 500);"
+                ]
+            },
+            "designerId": "9663f11d-63ae-4fab-9fcc-0142c5a1ea5d"
+        }
+    ]
+}

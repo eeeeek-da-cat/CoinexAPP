@@ -1,0 +1,15 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": false,
+        "designer|userClassName": "trade_pairs",
+        "model": "trade_pairs",
+        "storeId": "trade_pairs"
+    },
+    "designerId": "958a5477-8ebd-47f1-9aa9-c1e367810a10"
+}

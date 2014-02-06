@@ -1,0 +1,36 @@
+.x-grid-row .x-grid-cell-inner {
+    white-space: normal;
+}
+
+.x-grid-row-over .x-grid-cell-inner {
+    white-space: normal;
+}
+
+.copyright {
+    color:#666;
+    position:absolute;
+    right:5px;
+    bottom:5px;
+    font-size:10px;
+}
+
+.logo {
+    position:absolute;
+    left:5px;
+    top:5px;
+}
+
+.logo img {
+    height: 40px;
+    float:left;
+}
+
+.logo span {
+    margin-top:12px;
+    margin-left:-8px;
+    color:#666;
+    font-weight:bold;
+    float:left;
+    display:block;
+    font-size:14px;
+}

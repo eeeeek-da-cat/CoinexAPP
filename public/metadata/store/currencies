@@ -1,0 +1,15 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": false,
+        "designer|userClassName": "currencies",
+        "model": "currencies",
+        "storeId": "currencies"
+    },
+    "designerId": "09e19ee3-665e-4eec-90b8-0a2dcf4ba39e"
+}
