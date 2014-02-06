@@ -17,13 +17,25 @@ Ext.define('CoinEX.controller.balancesController', {
     extend: 'Ext.app.Controller',
 
     onPanelBeforeExpand: function(p, animate, eOpts) {
-        Ext.TaskManager.start({
-            run: this.reloadStore,
-            scope: this,
-            interval: 60000
-        });
+        var me = this;
 
-        this.reloadStore();
+        if (!me.loadTask) {
+            me.loadTask = Ext.TaskManager.newTask({
+                run: this.reloadStore,
+                scope: this,
+                interval: 60000
+            });
+        }
+
+        me.loadTask.start();
+    },
+
+    onPanelCollapse: function(p, eOpts) {
+        var me = this;
+
+        if (me.loadTask) {
+            me.loadTask.stop();
+        }
     },
 
     reloadStore: function() {
@@ -36,7 +48,8 @@ Ext.define('CoinEX.controller.balancesController', {
     init: function(application) {
         this.control({
             "#balancesPanel": {
-                beforeexpand: this.onPanelBeforeExpand
+                beforeexpand: this.onPanelBeforeExpand,
+                collapse: this.onPanelCollapse
             }
         });
     }
