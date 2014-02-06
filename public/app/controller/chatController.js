@@ -38,13 +38,17 @@ Ext.define('CoinEX.controller.chatController', {
     },
 
     onPanelBeforeExpand: function(p, animate, eOpts) {
-        Ext.TaskManager.start({
-            run: this.reloadStore,
-            scope: this,
-            interval: 2500
-        });
+        var me = this;
 
-        this.reloadStore();
+        if (!me.loadTask) {
+            me.loadTask = Ext.TaskManager.newTask({
+                run: me.reloadStore,
+                scope: me,
+                interval: 2500
+            });
+        }
+
+        me.loadTask.start();
     },
 
     onTextfieldSpecialkey: function(field, e, eOpts) {
@@ -64,6 +68,14 @@ Ext.define('CoinEX.controller.chatController', {
         }
     },
 
+    onPanelCollapse: function(p, eOpts) {
+        var me = this;
+
+        if (me.loadTask) {
+            me.loadTask.stop();
+        }
+    },
+
     reloadStore: function() {
         Ext.getStore('messages').reload();
     },
@@ -74,7 +86,8 @@ Ext.define('CoinEX.controller.chatController', {
                 click: this.onButtonClick
             },
             "#chatPanel": {
-                beforeexpand: this.onPanelBeforeExpand
+                beforeexpand: this.onPanelBeforeExpand,
+                collapse: this.onPanelCollapse
             },
             "#message": {
                 specialkey: this.onTextfieldSpecialkey

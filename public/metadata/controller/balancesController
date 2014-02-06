@@ -22,13 +22,17 @@
                 "designer|targetType": "Ext.panel.Panel",
                 "fn": "onPanelBeforeExpand",
                 "implHandler": [
-                    "Ext.TaskManager.start({",
-                    "    run: this.reloadStore,",
-                    "    scope: this,",
-                    "    interval: 60000",
-                    "});",
+                    "var me = this;",
                     "",
-                    "this.reloadStore();"
+                    "if (!me.loadTask) {",
+                    "    me.loadTask = Ext.TaskManager.newTask({",
+                    "        run: this.reloadStore,",
+                    "        scope: this,",
+                    "        interval: 60000",
+                    "    });",
+                    "}",
+                    "",
+                    "me.loadTask.start();"
                 ],
                 "name": "beforeexpand",
                 "scope": "me"
@@ -52,6 +56,29 @@
                 ]
             },
             "designerId": "9663f11d-63ae-4fab-9fcc-0142c5a1ea5d"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#balancesPanel",
+                "designer|targetType": "Ext.panel.Panel",
+                "fn": "onPanelCollapse",
+                "implHandler": [
+                    "var me = this;",
+                    "",
+                    "if (me.loadTask) {",
+                    "    me.loadTask.stop();",
+                    "}"
+                ],
+                "name": "collapse",
+                "scope": "me"
+            },
+            "designerId": "75d9a660-be5f-4e47-91a1-1201fce77196"
         }
     ]
 }
