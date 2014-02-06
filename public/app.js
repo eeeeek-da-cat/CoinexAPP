@@ -66,7 +66,7 @@ Ext.application({
             setTimeout(function () {
                 Ext.getStore(value).load();
             }, delay);
-            delay += 500;
+            delay += 750;
         });
     }
 

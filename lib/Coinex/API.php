@@ -18,6 +18,8 @@ class Coinex_API
     protected $headers = array();
     protected $post_data = false;
     
+    static $ch = null;
+    
     /**
      * Set CoinEx API key
      * 
@@ -69,26 +71,24 @@ class Coinex_API
      * @throws Exception
      */
     private function handleRequest($http_method, $method) {
-        static $ch = null;
-        
-        if (is_null($ch)) {
-            $ch = curl_init();
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/4.0 (compatible; CoinEx API PHP client; '.php_uname('s').'; PHP/'.phpversion().')');
+        if (is_null(Coinex_API::$ch)) {
+            Coinex_API::$ch = curl_init();
+            curl_setopt(Coinex_API::$ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt(Coinex_API::$ch, CURLOPT_USERAGENT, 'Mozilla/4.0 (compatible; CoinEx API PHP client; '.php_uname('s').'; PHP/'.phpversion().')');
         }
         
-        curl_setopt($ch, CURLOPT_URL, 'https://coinex.pw/api/v2/' . $method);
+        curl_setopt(Coinex_API::$ch, CURLOPT_URL, 'https://coinex.pw/api/v2/' . $method);
         
         if ($http_method === 'POST') {
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $this->post_data);
+            curl_setopt(Coinex_API::$ch, CURLOPT_POSTFIELDS, $this->post_data);
         }
         
-        curl_setopt($ch, CURLOPT_HTTPHEADER, $this->headers);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+        curl_setopt(Coinex_API::$ch, CURLOPT_HTTPHEADER, $this->headers);
+        curl_setopt(Coinex_API::$ch, CURLOPT_SSL_VERIFYPEER, FALSE);
 
-        $res = curl_exec($ch);
+        $res = curl_exec(Coinex_API::$ch);
         if ($res === false) {
-            throw new Exception('Could not get reply: '.curl_error($ch));
+            throw new Exception('Could not get reply: '.curl_error(Coinex_API::$ch));
         } 
         return $res;
     }
