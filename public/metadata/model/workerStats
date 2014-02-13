@@ -6,7 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "worker_stats"
+        "designer|userClassName": "workerStats"
     },
     "designerId": "2ff3f36b-0826-4de6-b82b-dc876e240251",
     "cn": [

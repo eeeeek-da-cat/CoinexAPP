@@ -6,7 +6,10 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "chatController"
+        "designer|userClassName": "chatController",
+        "stores": [
+            "messages"
+        ]
     },
     "designerId": "828047a2-5d16-4b1c-8f0e-37ced79c53aa",
     "cn": [
@@ -20,7 +23,7 @@
             "userConfig": {
                 "fn": "reloadStore",
                 "implHandler": [
-                    "Ext.getStore('messages').reload({",
+                    "this.getMessagesStore().reload({",
                     "    addRecords: true",
                     "});"
                 ]

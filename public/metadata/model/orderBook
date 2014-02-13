@@ -6,7 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "order_book"
+        "designer|userClassName": "orderBook"
     },
     "designerId": "f130d4cc-719d-41bc-a01d-7a253fa96b8f",
     "cn": [

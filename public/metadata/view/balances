@@ -1,0 +1,72 @@
+{
+    "type": "Ext.grid.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "balances",
+        "designer|userClassName": "balances",
+        "disableSelection": true,
+        "header": false,
+        "store": "balances",
+        "title": "My Balances",
+        "width": 250
+    },
+    "designerId": "2837dec7-ce9e-46bf-9b1c-f2edc1b46706",
+    "cn": [
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "currency_name",
+                "defaultWidth": 50,
+                "maxWidth": 50,
+                "minWidth": 50,
+                "text": "Coin",
+                "width": 50
+            },
+            "designerId": "504621c5-9220-4e53-a5bc-89e6ae96ceb6"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "align": "right",
+                "dataIndex": "balance",
+                "defaultWidth": null,
+                "flex": 1,
+                "maxWidth": null,
+                "minWidth": null,
+                "text": "Balance",
+                "width": null
+            },
+            "designerId": "46b1cc84-dea7-4dc0-82b5-2e824e27476c"
+        },
+        {
+            "type": "Ext.grid.View",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "gridview",
+                "loadMask": false
+            },
+            "configAlternates": {
+                "loadMask": "boolean"
+            },
+            "designerId": "e4207074-98dd-4c1e-a5c0-79cf46c368fd"
+        }
+    ]
+}

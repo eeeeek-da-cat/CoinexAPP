@@ -27,17 +27,21 @@
         "stores": [
             "balances",
             "currencies",
-            "trade_pairs",
             "messages",
-            "worker_stats",
             "workers",
             "notifications",
             "orders",
-            "order_book",
-            "markets"
+            "orderBook",
+            "markets",
+            "tradePairs",
+            "workerStats"
         ],
         "views": [
-            "MainView"
+            "viewport",
+            "currencies",
+            "chat",
+            "balances",
+            "workers"
         ]
     },
     "designerId": "application",
@@ -55,7 +59,7 @@
                     "var timeout = 0,",
                     "    private_stores = [",
                     "        'workers',",
-                    "        'worker_stats',",
+                    "        'workerStats',",
                     "        'balances',",
                     "        'notifications'",
                     "    ],",
@@ -72,7 +76,7 @@
                     "});",
                     "",
                     "setTimeout(function () {",
-                    "    Ext.create('widget.mainview');",
+                    "    Ext.create('widget.viewport');",
                     "}, timeout);"
                 ]
             },

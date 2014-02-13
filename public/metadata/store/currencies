@@ -11,26 +11,5 @@
         "model": "currencies",
         "storeId": "currencies"
     },
-    "designerId": "09e19ee3-665e-4eec-90b8-0a2dcf4ba39e",
-    "cn": [
-        {
-            "type": "basiceventbinding",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "onStoreLoad",
-                "implHandler": [
-                    "if (successful) {",
-                    "    Ext.getStore('trade_pairs').load();",
-                    "}"
-                ],
-                "name": "load",
-                "scope": "me"
-            },
-            "designerId": "f86339c5-806f-4c4c-81bd-a40305875d5f"
-        }
-    ]
+    "designerId": "09e19ee3-665e-4eec-90b8-0a2dcf4ba39e"
 }

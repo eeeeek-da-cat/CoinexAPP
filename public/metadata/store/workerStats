@@ -7,9 +7,9 @@
     "codeClass": null,
     "userConfig": {
         "autoLoad": false,
-        "designer|userClassName": "worker_stats",
-        "model": "worker_stats",
-        "storeId": "worker_stats"
+        "designer|userClassName": "workerStats",
+        "model": "workerStats",
+        "storeId": "workerStats"
     },
     "designerId": "564630fd-001c-4d45-83a8-1ed7d3134c55"
 }

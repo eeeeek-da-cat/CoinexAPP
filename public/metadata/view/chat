@@ -1,0 +1,175 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "collapsed": true,
+        "collapsible": true,
+        "container|align": "stretch",
+        "designer|userAlias": "chat",
+        "designer|userClassName": "chat",
+        "id": "chatPanel",
+        "itemId": "chatPanel",
+        "layout": "vbox",
+        "maxWidth": 400,
+        "minWidth": 400,
+        "title": "Chat Box",
+        "width": 400
+    },
+    "designerId": "8fd02fde-10a8-43c8-94d0-07ee35bcdd9b",
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "collapsed": false,
+                "designer|displayName": "Chat Box",
+                "disableSelection": true,
+                "emptyText": null,
+                "header": false,
+                "layout|flex": 1,
+                "lockedViewConfig": null,
+                "normalViewConfig": null,
+                "store": "messages",
+                "title": null
+            },
+            "configAlternates": {
+                "viewConfig": "object",
+                "invalidateScrollerOnRefresh": "boolean"
+            },
+            "designerId": "1b6f6026-0649-4c58-adad-80825a18145d",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Date",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "created_at",
+                        "defaultWidth": 75,
+                        "format": "H:i:s",
+                        "hidden": true,
+                        "maxWidth": 75,
+                        "minWidth": 75,
+                        "text": "Time",
+                        "width": 75
+                    },
+                    "designerId": "accab792-7207-42d2-ac1d-f9d848fb6ba1"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "name",
+                        "text": "User"
+                    },
+                    "designerId": "8eebcdd5-b574-4b73-9070-994c5efe3721"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "body",
+                        "flex": 1,
+                        "text": "Message"
+                    },
+                    "designerId": "6d209156-6710-4cce-aa80-5badceed8f6e"
+                },
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "gridview",
+                        "id": "chatGrid",
+                        "loadMask": false,
+                        "preserveScrollOnRefresh": true
+                    },
+                    "configAlternates": {
+                        "loadMask": "boolean"
+                    },
+                    "designerId": "fe68c416-0a1c-4d29-a6a9-4e0e9a59caee"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 5,
+                "container|align": "stretch",
+                "header": false,
+                "height": 35,
+                "id": null,
+                "itemId": null,
+                "layout": "hbox",
+                "layout|flex": null,
+                "maxHeight": 35,
+                "minHeight": 35,
+                "title": "Message",
+                "url": "/api/messages"
+            },
+            "designerId": "041a582a-5035-4174-938e-1c8e7bdd448a",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "blankText": "Type your message",
+                        "designer|displayName": "body",
+                        "fieldLabel": null,
+                        "id": "message",
+                        "inputId": null,
+                        "itemId": "message",
+                        "layout|flex": 1,
+                        "margin": "0 5px 0 0",
+                        "name": "body"
+                    },
+                    "designerId": "53edfdf6-8cb0-4b88-be17-3cac3d7ea2f5"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "chatSubmit",
+                        "layout|flex": null,
+                        "text": "Send"
+                    },
+                    "designerId": "2b89eb49-d224-45b8-849a-e21cdee55f78"
+                }
+            ]
+        }
+    ]
+}

@@ -16,20 +16,106 @@
 Ext.define('CoinEX.controller.currenciesController', {
     extend: 'Ext.app.Controller',
 
+    stores: [
+        'tradePairs',
+        'currencies',
+        'markets'
+    ],
+
+    refs: [
+        {
+            ref: 'comboBox',
+            selector: 'combobox#market-select'
+        }
+    ],
+
     onComboboxSelect: function(combo, records, eOpts) {
         var market_id = combo.getValue(),
-            store = Ext.getStore('trade_pairs');
+            store = this.getTradePairsStore();
 
         store.clearFilter(true);
         store.filter('market_id', market_id);
     },
 
+    onComboboxAfterRender: function(component, eOpts) {
+        var BTC = this.getMarketsStore().findRecord('name', 'BTC');
+        this.getComboBox().select(BTC);
+    },
+
+    generateMarkets: function(market_ids) {
+        var me = this,
+            markets = me.getMarketsStore(),
+            currencies = me.getCurrenciesStore();
+
+
+        if (markets.count() !== 0) {
+            markets.removeAll();
+        }
+
+        Ext.each(market_ids, function (market_id) {
+            var currency = currencies.findRecord('id', market_id);
+            markets.add({
+                id:  market_id,
+                name: currency.get('name')
+            });
+        });
+
+        me.marketsLoaded = true;
+    },
+
+    onCurrenciesLoad: function() {
+        var store = this.getTradePairsStore();
+
+        if (store.getCount() !== 0) {
+            store.reload();
+        } else {
+            store.load();
+        }
+    },
+
+    onTradePairsLoad: function() {
+        var me = this, currentFilters,
+            currencies = me.getCurrenciesStore(),
+            store = me.getTradePairsStore();
+
+        if(store.isFiltered()) {
+            currentFilters = store.filters;
+            store.clearFilter(true);
+        }
+
+        store.data.each(function (record) {
+            var coin = currencies.findRecord('id', record.get('currency_id'));
+            record.set('currency_name', coin.get('name'));
+            record.commit();
+        });
+
+        store.sort({
+            property: 'currency_name',
+            direction : 'ASC'
+        });
+
+        if (currentFilters !== undefined) {
+            console.log('FILTERED');
+            console.log(currentFilters);
+            Ext.each(currentFilters, function (filter) {
+                store.filter(filter);
+            });
+        }
+
+        if (!me.marketsLoaded) {
+            me.generateMarkets(store.collect('market_id'));
+        }
+    },
+
     reloadStore: function() {
-        Ext.getStore('currencies').reload();
+        this.getCurrenciesStore().reload();
     },
 
     init: function(application) {
                 var me = this;
+
+                me.getCurrenciesStore().on('load', me.onCurrenciesLoad, me);
+                me.getTradePairsStore().on('load', me.onTradePairsLoad, me);
 
                 if (!me.loadTask) {
                     me.loadTask = Ext.TaskManager.newTask({
@@ -43,7 +129,8 @@ Ext.define('CoinEX.controller.currenciesController', {
 
         this.control({
             "combobox#market-select": {
-                select: this.onComboboxSelect
+                select: this.onComboboxSelect,
+                afterrender: this.onComboboxAfterRender
             }
         });
     }

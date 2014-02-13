@@ -6,7 +6,12 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "balancesController"
+        "designer|userClassName": "balancesController",
+        "stores": [
+            "balances",
+            "workerStats",
+            "workers"
+        ]
     },
     "designerId": "24370b47-7067-48fb-99fd-905ffcff3e90",
     "cn": [
@@ -49,9 +54,10 @@
             "userConfig": {
                 "fn": "reloadStore",
                 "implHandler": [
-                    "Ext.getStore('balances').reload();",
+                    "var me = this;",
+                    "me.getBalancesStore().reload();",
                     "setTimeout(function () {",
-                    "    Ext.getStore('workers').reload();",
+                    "    me.getWorkersStore().reload();",
                     "}, 1000);"
                 ]
             },

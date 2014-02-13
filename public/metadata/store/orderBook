@@ -6,9 +6,9 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "order_book",
-        "model": "order_book",
-        "storeId": "order_book"
+        "designer|userClassName": "orderBook",
+        "model": "orderBook",
+        "storeId": "orderBook"
     },
     "designerId": "e2c1ae3d-6a1a-4fed-ba18-a2f1e5aa34d8"
 }

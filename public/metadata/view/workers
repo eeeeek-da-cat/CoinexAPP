@@ -1,0 +1,86 @@
+{
+    "type": "Ext.grid.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "workers",
+        "designer|userClassName": "workers",
+        "header": [
+            "{",
+            "    tools:[{",
+            "        type:'refresh',",
+            "        tooltip: 'Refresh Workers',",
+            "        handler: function(event, toolEl, panel){",
+            "            Ext.getStore('worker_stats').reload();",
+            "            setTimeout(function () {",
+            "                Ext.getStore('workers').reload();",
+            "            }, 1000)",
+            "        }",
+            "    }]        ",
+            "}"
+        ],
+        "height": 150,
+        "store": "workerStats",
+        "title": "My Workers"
+    },
+    "configAlternates": {
+        "header": "object"
+    },
+    "designerId": "0fbd02aa-bd94-43b8-a5c3-c8ca3a3fc0c1",
+    "cn": [
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "nickname",
+                "defaultWidth": null,
+                "flex": 1,
+                "maxWidth": null,
+                "minWidth": null,
+                "text": "Worker",
+                "width": null
+            },
+            "designerId": "b6d95548-6477-4033-ad75-ab4b8e91a097"
+        },
+        {
+            "type": "Ext.grid.column.Number",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "align": "right",
+                "dataIndex": "hashrate",
+                "defaultWidth": 80,
+                "maxWidth": 80,
+                "minWidth": 80,
+                "text": "Khash/sec",
+                "width": 80
+            },
+            "designerId": "782c5655-9360-4881-8020-e8f00d545504"
+        },
+        {
+            "type": "Ext.grid.View",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "gridview"
+            },
+            "configAlternates": {
+                "loadMask": "boolean"
+            },
+            "designerId": "ba9f13aa-2d80-4d47-92ba-20a0560fff41"
+        }
+    ]
+}

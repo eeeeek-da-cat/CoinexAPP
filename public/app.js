@@ -23,29 +23,33 @@ Ext.application({
     models: [
         'balances',
         'currencies',
-        'trade_pairs',
+        'tradePairs',
         'orders',
         'messages',
         'notifications',
-        'worker_stats',
+        'workerStats',
         'workers',
-        'order_book',
+        'orderBook',
         'markets'
     ],
     stores: [
         'balances',
         'currencies',
-        'trade_pairs',
         'messages',
-        'worker_stats',
         'workers',
         'notifications',
         'orders',
-        'order_book',
-        'markets'
+        'orderBook',
+        'markets',
+        'tradePairs',
+        'workerStats'
     ],
     views: [
-        'MainView'
+        'viewport',
+        'currencies',
+        'chat',
+        'balances',
+        'workers'
     ],
     controllers: [
         'chatController',
@@ -58,7 +62,7 @@ Ext.application({
         var timeout = 0,
             private_stores = [
                 'workers',
-                'worker_stats',
+                'workerStats',
                 'balances',
                 'notifications'
             ],
@@ -75,7 +79,7 @@ Ext.application({
         });
 
         setTimeout(function () {
-            Ext.create('widget.mainview');
+            Ext.create('widget.viewport');
         }, timeout);
     }
 

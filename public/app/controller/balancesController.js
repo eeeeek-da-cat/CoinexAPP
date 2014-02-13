@@ -16,6 +16,12 @@
 Ext.define('CoinEX.controller.balancesController', {
     extend: 'Ext.app.Controller',
 
+    stores: [
+        'balances',
+        'workerStats',
+        'workers'
+    ],
+
     onPanelBeforeExpand: function(p, animate, eOpts) {
         var me = this;
 
@@ -39,9 +45,10 @@ Ext.define('CoinEX.controller.balancesController', {
     },
 
     reloadStore: function() {
-        Ext.getStore('balances').reload();
+        var me = this;
+        me.getBalancesStore().reload();
         setTimeout(function () {
-            Ext.getStore('workers').reload();
+            me.getWorkersStore().reload();
         }, 1000);
     },
 

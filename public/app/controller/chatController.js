@@ -16,6 +16,10 @@
 Ext.define('CoinEX.controller.chatController', {
     extend: 'Ext.app.Controller',
 
+    stores: [
+        'messages'
+    ],
+
     onButtonClick: function(button, e, eOpts) {
         var date = new Date(),
             textfield = button.previousNode('textfield'),
@@ -77,7 +81,7 @@ Ext.define('CoinEX.controller.chatController', {
     },
 
     reloadStore: function() {
-        Ext.getStore('messages').reload({
+        this.getMessagesStore().reload({
             addRecords: true
         });
     },

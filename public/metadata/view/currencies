@@ -1,0 +1,105 @@
+{
+    "type": "Ext.grid.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "currencies",
+        "designer|userClassName": "currencies",
+        "maxWidth": 200,
+        "minWidth": 200,
+        "store": "tradePairs",
+        "title": "Currencies",
+        "width": 200
+    },
+    "designerId": "9bbf173e-2c1d-4a5a-add0-ab327b3d7ccd",
+    "cn": [
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "currency_name",
+                "defaultWidth": 65,
+                "maxWidth": 65,
+                "minWidth": 65,
+                "sortable": true,
+                "text": "Currency",
+                "width": 65
+            },
+            "designerId": "5797179c-54ac-423e-88c7-9a3a8f035d08"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "rate",
+                "flex": 1,
+                "text": "Rate"
+            },
+            "designerId": "ddcc45af-12b5-455d-974e-3e901e35ebb1"
+        },
+        {
+            "type": "Ext.grid.View",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "gridview",
+                "loadMask": false,
+                "markDirty": null
+            },
+            "configAlternates": {
+                "loadMask": "boolean"
+            },
+            "designerId": "4b8c6d7b-93b7-42d5-a9da-4d42358ce673"
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "toolbar",
+                "dock": "top"
+            },
+            "designerId": "54a71369-9ddf-427f-9bb8-5580e87cf3f8",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "name",
+                        "fieldLabel": "Market",
+                        "forceSelection": true,
+                        "id": "market-select",
+                        "itemId": "market-select",
+                        "labelStyle": "padding-left:5px",
+                        "layout|flex": 1,
+                        "queryMode": "local",
+                        "store": "markets",
+                        "valueField": "id"
+                    },
+                    "designerId": "f8d01880-683d-40fc-a4d2-0fdcc33539cc"
+                }
+            ]
+        }
+    ]
+}
