@@ -57,6 +57,19 @@
             },
             "codeClass": null,
             "userConfig": {
+                "name": "worker_name",
+                "type": "string"
+            },
+            "designerId": "65cb9019-1918-4a74-b9e3-812e9fecd098"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "currency_id",
                 "type": "int"
             },

@@ -24,9 +24,62 @@ Ext.define('CoinEX.store.trade_pairs', {
         var me = this;
         cfg = cfg || {};
         me.callParent([Ext.apply({
+            marketsLoaded: false,
             autoLoad: false,
             model: 'CoinEX.model.trade_pairs',
-            storeId: 'trade_pairs'
+            storeId: 'trade_pairs',
+            listeners: {
+                load: {
+                    fn: me.onStoreLoad,
+                    scope: me
+                }
+            }
         }, cfg)]);
+    },
+
+    onStoreLoad: function(store, records, successful, eOpts) {
+        var market_ids = store.collect('market_id'),
+            currencies = Ext.getStore('currencies'),
+            markets = Ext.getStore('markets'),
+            me = this;
+
+        if(store.isFiltered()) {
+            //somehow store current filter ?
+            store.clearFilter(true);
+        }
+
+        store.data.each(function (record) {
+            var coin = Ext.getStore('currencies').findRecord('id', record.get('currency_id'));
+            record.set('currency_name', coin.get('name'));
+            record.commit();
+        });
+
+        store.sort({
+            property: 'currency_name',
+            direction : 'ASC'
+        });
+
+        //restore filter here?
+
+
+        if (successful && !me.marketsLoaded) {
+
+            if (markets.count() !== 0) {
+                markets.removeAll();
+            }
+
+            Ext.each(market_ids, function (market_id) {
+                var currency = Ext.getStore('currencies').findRecord('id', market_id);
+                markets.add({
+                    id:  market_id,
+                    name: currency.get('name')
+                });
+            });
+
+            store.filter('market_id', market_ids[0]);
+
+            me.marketsLoaded = true;
+        }
     }
+
 });

@@ -15,7 +15,7 @@ class Coinex_Cache
     protected $lifetime = array(
         'balances'      => 60,
         'currencies'    => 60,
-        'messages'      => 2.5,
+        'messages'      => 5,
         'notifications' => 60,
         'orders'        => 60,
         'trade_pairs'   => 60,
@@ -30,9 +30,11 @@ class Coinex_Cache
      * @return mixed
      */
     public function is_cached($resource) {
+        $identifier = array_shift(explode("/", $resource));
+        $resource = str_replace('/', '_', $resource);
         $cachefile = ROOT_PATH . '/cache/' . $resource . '.json';
         if (file_exists($cachefile)) {
-            $lifetime = filemtime($cachefile) + $this->lifetime[$resource];
+            $lifetime = filemtime($cachefile) + $this->lifetime[$identifier];
             if ($lifetime >= time()) {
                 return file_get_contents($cachefile);
             }
@@ -47,6 +49,7 @@ class Coinex_Cache
      * @param type $data
      */
     public function write($resource, $data) {
+        $resource = str_replace('/', '_', $resource);
         $cachefile = ROOT_PATH .'/cache/' . $resource . '.json';
         file_put_contents($cachefile, $data);
     }

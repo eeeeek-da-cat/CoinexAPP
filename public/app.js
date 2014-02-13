@@ -28,7 +28,9 @@ Ext.application({
         'messages',
         'notifications',
         'worker_stats',
-        'workers'
+        'workers',
+        'order_book',
+        'markets'
     ],
     stores: [
         'balances',
@@ -38,36 +40,43 @@ Ext.application({
         'worker_stats',
         'workers',
         'notifications',
-        'orders'
+        'orders',
+        'order_book',
+        'markets'
     ],
     views: [
         'MainView'
     ],
     controllers: [
         'chatController',
-        'balancesController'
+        'balancesController',
+        'currenciesController'
     ],
     name: 'CoinEX',
 
     launch: function() {
-        Ext.create('CoinEX.view.MainView');
-        var delay = 0,
-            stores = [
-            'currencies',
-            'trade_pairs',
-            'workers',
-            'worker_stats',
-            'balances',
-            'messages',
-            'notifications'
-        ];
+        var timeout = 0,
+            private_stores = [
+                'workers',
+                'worker_stats',
+                'balances',
+                'notifications'
+            ],
+            me = this;
 
-        Ext.each(stores, function(value) {
+        Ext.getStore('messages').load();
+        Ext.getStore('currencies').load();
+
+        Ext.each(private_stores, function(value) {
             setTimeout(function () {
                 Ext.getStore(value).load();
-            }, delay);
-            delay += 750;
+            }, timeout);
+            timeout += 1000;
         });
+
+        setTimeout(function () {
+            Ext.create('widget.mainview');
+        }, timeout);
     }
 
 });

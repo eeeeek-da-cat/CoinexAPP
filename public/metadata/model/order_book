@@ -1,0 +1,81 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "order_book"
+    },
+    "designerId": "f130d4cc-719d-41bc-a01d-7a253fa96b8f",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "rate",
+                "type": "int"
+            },
+            "designerId": "98d6e849-db6b-4a97-916e-6cad026d3dfb"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "amount",
+                "type": "int"
+            },
+            "designerId": "90633848-5780-452f-9a06-9e86b4537328"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "bid",
+                "type": "boolean"
+            },
+            "designerId": "38bbb293-d536-4dca-b9bd-8020b0a73a02"
+        },
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "proxy",
+                "url": "/api/orders/book?tradePair=46"
+            },
+            "designerId": "a2d94b5e-3a79-4bd4-b6c0-742738ffef91",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "reader",
+                        "root": "order_book"
+                    },
+                    "designerId": "d952e5b1-7609-4c7a-a006-468b774a77f9"
+                }
+            ]
+        }
+    ]
+}

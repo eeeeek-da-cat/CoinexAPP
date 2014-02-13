@@ -44,7 +44,7 @@ Ext.define('CoinEX.controller.chatController', {
             me.loadTask = Ext.TaskManager.newTask({
                 run: me.reloadStore,
                 scope: me,
-                interval: 2500
+                interval: 5000
             });
         }
 
@@ -77,7 +77,9 @@ Ext.define('CoinEX.controller.chatController', {
     },
 
     reloadStore: function() {
-        Ext.getStore('messages').reload();
+        Ext.getStore('messages').reload({
+            addRecords: true
+        });
     },
 
     init: function(application) {

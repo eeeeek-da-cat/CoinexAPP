@@ -8,7 +8,8 @@
     "userConfig": {
         "controllers": [
             "chatController",
-            "balancesController"
+            "balancesController",
+            "currenciesController"
         ],
         "models": [
             "balances",
@@ -18,7 +19,9 @@
             "messages",
             "notifications",
             "worker_stats",
-            "workers"
+            "workers",
+            "order_book",
+            "markets"
         ],
         "name": "CoinEX",
         "stores": [
@@ -29,7 +32,9 @@
             "worker_stats",
             "workers",
             "notifications",
-            "orders"
+            "orders",
+            "order_book",
+            "markets"
         ],
         "views": [
             "MainView"
@@ -47,23 +52,28 @@
             "userConfig": {
                 "fn": "launch",
                 "implHandler": [
-                    "var delay = 0,",
-                    "    stores = [",
-                    "    'currencies',",
-                    "    'trade_pairs',",
-                    "    'workers',",
-                    "    'worker_stats',",
-                    "    'balances',",
-                    "    'messages',",
-                    "    'notifications'",
-                    "];",
+                    "var timeout = 0,",
+                    "    private_stores = [",
+                    "        'workers',",
+                    "        'worker_stats',",
+                    "        'balances',",
+                    "        'notifications'",
+                    "    ],",
+                    "    me = this;",
                     "",
-                    "Ext.each(stores, function(value) {",
+                    "Ext.getStore('messages').load();",
+                    "Ext.getStore('currencies').load();",
+                    "",
+                    "Ext.each(private_stores, function(value) {",
                     "    setTimeout(function () {",
                     "        Ext.getStore(value).load();",
-                    "    }, delay);",
-                    "    delay += 750;",
-                    "});"
+                    "    }, timeout);",
+                    "    timeout += 1000;",
+                    "});",
+                    "",
+                    "setTimeout(function () {",
+                    "    Ext.create('widget.mainview');",
+                    "}, timeout);"
                 ]
             },
             "designerId": "14c1d48e-eaae-4b9b-bcbd-135f9a0060d7"

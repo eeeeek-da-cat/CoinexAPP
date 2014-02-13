@@ -26,7 +26,20 @@ Ext.define('CoinEX.store.currencies', {
         me.callParent([Ext.apply({
             autoLoad: false,
             model: 'CoinEX.model.currencies',
-            storeId: 'currencies'
+            storeId: 'currencies',
+            listeners: {
+                load: {
+                    fn: me.onStoreLoad,
+                    scope: me
+                }
+            }
         }, cfg)]);
+    },
+
+    onStoreLoad: function(store, records, successful, eOpts) {
+        if (successful) {
+            Ext.getStore('trade_pairs').load();
+        }
     }
+
 });

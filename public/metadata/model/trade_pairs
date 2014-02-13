@@ -70,6 +70,19 @@
             },
             "codeClass": null,
             "userConfig": {
+                "name": "currency_name",
+                "type": "string"
+            },
+            "designerId": "c0187546-d068-4738-9e3c-ab0ae5fc838d"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "market_id",
                 "type": "int"
             },
@@ -152,6 +165,42 @@
                 "type": "date"
             },
             "designerId": "797a4626-e8f5-4cad-aafb-2a8d5b3f66be"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": "last_price",
+                "name": "rate",
+                "type": "float"
+            },
+            "designerId": "6ccc1b3c-f654-4cd3-b789-2ea48dc2f32e",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "v",
+                            "rec"
+                        ],
+                        "fn": "convert",
+                        "implHandler": [
+                            "return (v/100000000).toString();",
+                            ""
+                        ]
+                    },
+                    "designerId": "88508bdd-e653-4982-8ca9-af43911d2955"
+                }
+            ]
         },
         {
             "type": "Ext.data.proxy.Ajax",

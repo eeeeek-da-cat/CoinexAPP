@@ -34,3 +34,11 @@
     display:block;
     font-size:14px;
 }
+
+html {
+    background-color:#e0e0e0;
+    background-image:url('/images/coinex_loading.png');
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    background-position:center center; 
+}

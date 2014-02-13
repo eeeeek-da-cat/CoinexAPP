@@ -22,32 +22,22 @@ require_once 'Coinex/Loader.php';
 Coinex_Loader::init();
 
 $api    = new Coinex_API();
-$cache  = new Coinex_Cache();
 
 $config = parse_ini_file(ROOT_PATH . '/config/config.ini', true);
 
 $api->setKey($config['coinex']['key'])
     ->setSecret($config['coinex']['secret']);
 
-$resource  = strtok(filter_input(INPUT_SERVER, 'REQUEST_URI'), '?');
-$resource  = str_replace('/api/', '', $resource);
+$resource  = str_replace('/api/', '', filter_input(INPUT_SERVER, 'REQUEST_URI'));
 $method    = filter_input(INPUT_SERVER, 'REQUEST_METHOD');
 $request   = array();
-$response  = false;
 
-if ($method === 'GET') {
-    $response = $cache->is_cached($resource);
-} elseif ($method === 'POST') {
+if ($method === 'POST') {
     $data = json_decode(file_get_contents('php://input'));
     $request = get_object_vars($data);
 }
 
-if (!$response) {
-    $response = json_encode($api->query($method, $resource, $request));
-    if ($method === 'GET') {
-        $cache->write($resource, $response);
-    }
-}
+$response = $api->query($method, $resource, $request);
 
 header('Content-type: application/json');
-echo $response;
+echo json_encode($response);

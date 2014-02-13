@@ -28,6 +28,8 @@ Ext.define('CoinEX.store.messages', {
             autoLoad: false,
             model: 'CoinEX.model.messages',
             storeId: 'messages',
+            leadingBufferZone: 25,
+            pageSize: 50,
             sorters: {
                 direction: 'DESC',
                 property: 'created_at'

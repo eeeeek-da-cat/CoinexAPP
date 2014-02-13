@@ -6,14 +6,11 @@
     },
     "codeClass": null,
     "userConfig": {
-        "autoLoad": false,
-        "designer|userClassName": "messages",
-        "leadingBufferZone": 25,
-        "model": "messages",
-        "pageSize": 50,
-        "storeId": "messages"
+        "designer|userClassName": "markets",
+        "model": "markets",
+        "storeId": "markets"
     },
-    "designerId": "e30594bd-fc3f-40b2-b1b4-1d5454f623c4",
+    "designerId": "11da1420-9263-44b8-8903-ebcbb02a96b4",
     "cn": [
         {
             "type": "Ext.util.Sorter",
@@ -24,11 +21,9 @@
             "codeClass": null,
             "userConfig": {
                 "designer|displayName": "sorter",
-                "direction": "DESC",
-                "property": "created_at",
-                "root": null
+                "property": "name"
             },
-            "designerId": "35c5f48a-2926-439d-a739-664f878fa600"
+            "designerId": "c2f6d7ca-9338-4e52-97be-33b34645b532"
         }
     ]
 }

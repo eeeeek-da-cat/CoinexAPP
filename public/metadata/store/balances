@@ -9,7 +9,9 @@
         "autoLoad": false,
         "designer|userClassName": "balances",
         "model": "balances",
-        "storeId": "balances"
+        "pageSize": 100,
+        "storeId": "balances",
+        "trailingBufferZone": null
     },
     "designerId": "bab4fb60-828d-471e-806b-e71c3de92bec",
     "cn": [

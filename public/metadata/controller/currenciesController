@@ -1,0 +1,80 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "currenciesController"
+    },
+    "designerId": "e0b659ee-1f0d-47ba-829c-a318fd379ddc",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "combobox#market-select",
+                "designer|targetType": "Ext.form.field.ComboBox",
+                "fn": "onComboboxSelect",
+                "implHandler": [
+                    "var market_id = combo.getValue(),",
+                    "    store = Ext.getStore('trade_pairs');",
+                    "",
+                    "store.clearFilter(true);",
+                    "store.filter('market_id', market_id);"
+                ],
+                "name": "select",
+                "scope": "me"
+            },
+            "designerId": "6a499cb5-559d-4d4c-9f4e-72c44bd1ad38"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "reloadStore",
+                "implHandler": [
+                    "Ext.getStore('currencies').reload();"
+                ]
+            },
+            "designerId": "b91720d6-f542-4f81-80d6-3edafd07b4ac"
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "application"
+                ],
+                "fn": "init",
+                "implHandler": [
+                    "var me = this;",
+                    "",
+                    "if (!me.loadTask) {",
+                    "    me.loadTask = Ext.TaskManager.newTask({",
+                    "        run: this.reloadStore,",
+                    "        scope: this,",
+                    "        interval: 10000",
+                    "    });",
+                    "}",
+                    "",
+                    "me.loadTask.start();"
+                ]
+            },
+            "designerId": "87f1ee50-0fcd-4a95-9805-108ad8bda696"
+        }
+    ]
+}

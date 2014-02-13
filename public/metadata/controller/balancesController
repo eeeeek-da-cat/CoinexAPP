@@ -52,7 +52,7 @@
                     "Ext.getStore('balances').reload();",
                     "setTimeout(function () {",
                     "    Ext.getStore('workers').reload();",
-                    "}, 500);"
+                    "}, 1000);"
                 ]
             },
             "designerId": "9663f11d-63ae-4fab-9fcc-0142c5a1ea5d"

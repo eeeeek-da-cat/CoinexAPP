@@ -40,6 +40,10 @@ Ext.define('CoinEX.model.trade_pairs', {
             type: 'int'
         },
         {
+            name: 'currency_name',
+            type: 'string'
+        },
+        {
             name: 'market_id',
             type: 'int'
         },
@@ -66,6 +70,15 @@ Ext.define('CoinEX.model.trade_pairs', {
         {
             name: 'updated_at',
             type: 'date'
+        },
+        {
+            convert: function(v, rec) {
+                return (v/100000000).toString();
+
+            },
+            mapping: 'last_price',
+            name: 'rate',
+            type: 'float'
         }
     ],
 

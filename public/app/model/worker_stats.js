@@ -36,6 +36,10 @@ Ext.define('CoinEX.model.worker_stats', {
             type: 'int'
         },
         {
+            name: 'worker_name',
+            type: 'string'
+        },
+        {
             name: 'currency_id',
             type: 'int'
         },

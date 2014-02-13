@@ -18,6 +18,13 @@ class Coinex_API
     protected $headers = array();
     protected $post_data = false;
     
+    protected $public = array(
+        'currencies',
+        'trade_pairs',
+        'messages',
+        'orders/book'
+    );
+    
     static $ch = null;
     
     /**
@@ -104,7 +111,22 @@ class Coinex_API
      */
     public function query($http_method, $method, array $req = array()) {
         $this->post_data = $http_method == 'POST' ? json_encode($req) : '';
-        $this->headers = $this->generateHeader();
+        
+        $this->private = true;
+        
+        foreach($this->public as $public) {
+            if (strpos($method, $public) !== false) {
+                $this->private = false;
+                break;
+            }
+        } 
+        
+        if ($this->private) {
+            $this->headers = $this->generateHeader();
+        } else {
+            $this->headers = array('Content-type: application/json');
+        }
+
         $response = $this->handleRequest($http_method, $method);
         $dec = json_decode($response, true);
         if (!$dec) {

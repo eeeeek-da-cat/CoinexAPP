@@ -6,8 +6,9 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|initialView": true,
+        "designer|userAlias": "mainview",
         "designer|userClassName": "MainView",
+        "id": "mainView",
         "itemId": "mainView",
         "layout": "border"
     },
@@ -21,9 +22,10 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|displayName": "headerContainer",
                 "height": 50,
                 "html": "<div class=\"logo\"><img src=\"/images/coinex_logo.png\" alt=\"CoinEX Logo\"><span>CoinEX</span></div>",
-                "itemId": "headerPanel",
+                "itemId": null,
                 "layout|region": "north",
                 "layout|split": false
             },
@@ -33,23 +35,204 @@
             "designerId": "50c244fe-da31-4fb5-87f9-0ca07b0edb20"
         },
         {
-            "type": "Ext.panel.Panel",
+            "type": "Ext.container.Container",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "container|align": "stretch",
-                "designer|displayName": "mainPanel",
-                "itemId": "centerPanel",
-                "layout": "hbox",
-                "layout|flex": 2,
+                "designer|displayName": "mainContainer",
+                "itemId": null,
+                "layout": "border",
+                "layout|flex": 1,
                 "layout|region": "center",
-                "layout|split": true,
-                "title": "CoinEx"
+                "layout|split": true
             },
-            "designerId": "a8ea999e-caee-40aa-aae8-e8bb6cac3932"
+            "configAlternates": {
+                "items": "array"
+            },
+            "designerId": "a8ea999e-caee-40aa-aae8-e8bb6cac3932",
+            "cn": [
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "layout|region": "west",
+                        "layout|split": true,
+                        "maxWidth": 200,
+                        "minWidth": 200,
+                        "store": "trade_pairs",
+                        "title": "Currencies",
+                        "width": 200
+                    },
+                    "designerId": "7a436c46-1188-4f20-9a2d-6c4443db385d",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "currency_name",
+                                "defaultWidth": 65,
+                                "maxWidth": 65,
+                                "minWidth": 65,
+                                "sortable": true,
+                                "text": "Currency",
+                                "width": 65
+                            },
+                            "designerId": "5797179c-54ac-423e-88c7-9a3a8f035d08"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "rate",
+                                "flex": 1,
+                                "text": "Rate"
+                            },
+                            "designerId": "ddcc45af-12b5-455d-974e-3e901e35ebb1"
+                        },
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "gridview",
+                                "loadMask": false,
+                                "markDirty": null
+                            },
+                            "configAlternates": {
+                                "loadMask": "boolean"
+                            },
+                            "designerId": "4b8c6d7b-93b7-42d5-a9da-4d42358ce673"
+                        },
+                        {
+                            "type": "Ext.toolbar.Toolbar",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "toolbar",
+                                "dock": "top"
+                            },
+                            "designerId": "54a71369-9ddf-427f-9bb8-5580e87cf3f8",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "displayField": "name",
+                                        "fieldLabel": "Market",
+                                        "forceSelection": true,
+                                        "id": "market-select",
+                                        "itemId": "market-select",
+                                        "labelStyle": "padding-left:5px",
+                                        "layout|flex": 1,
+                                        "queryMode": "local",
+                                        "store": "markets",
+                                        "valueField": "id"
+                                    },
+                                    "designerId": "f8d01880-683d-40fc-a4d2-0fdcc33539cc",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "marketSelect",
+                                                "implHandler": [
+                                                    "component.select(component.getStore().getAt(0));"
+                                                ],
+                                                "name": "beforerender",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "03980d21-cd57-4f20-ac8e-58c44c7639c5"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "detailContainer",
+                        "layout": "border",
+                        "layout|flex": 1,
+                        "layout|region": "center",
+                        "layout|split": true
+                    },
+                    "designerId": "c105332c-28e5-47fc-a61c-91233b06ace7",
+                    "cn": [
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|align": "stretch",
+                                "designer|displayName": "tradesPanel",
+                                "height": 350,
+                                "layout": "hbox",
+                                "layout|region": "north",
+                                "layout|split": true,
+                                "maxHeight": 350,
+                                "minHeight": 350,
+                                "title": "Trades"
+                            },
+                            "designerId": "c35b7c90-044b-49da-9ddf-40f75e7b8efe"
+                        },
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "ordersPanel",
+                                "layout|flex": 1,
+                                "layout|region": "center",
+                                "title": "Orders"
+                            },
+                            "designerId": "5420593c-6331-46e7-873a-ff48e3625a4c"
+                        }
+                    ]
+                }
+            ]
         },
         {
             "type": "Ext.panel.Panel",
@@ -162,7 +345,9 @@
                             "        tooltip: 'Refresh Workers',",
                             "        handler: function(event, toolEl, panel){",
                             "            Ext.getStore('worker_stats').reload();",
-                            "            Ext.getStore('workers').reload();",
+                            "            setTimeout(function () {",
+                            "                Ext.getStore('workers').reload();",
+                            "            }, 1000)",
                             "        }",
                             "    }]        ",
                             "}"
@@ -185,6 +370,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "dataIndex": "nickname",
                                 "defaultWidth": null,
                                 "flex": 1,
                                 "maxWidth": null,
@@ -192,36 +378,7 @@
                                 "text": "Worker",
                                 "width": null
                             },
-                            "designerId": "b6d95548-6477-4033-ad75-ab4b8e91a097",
-                            "cn": [
-                                {
-                                    "type": "fixedfunction",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "designer|params": [
-                                            "value",
-                                            "metaData",
-                                            "record",
-                                            "rowIndex",
-                                            "colIndex",
-                                            "store",
-                                            "view"
-                                        ],
-                                        "fn": "renderer",
-                                        "implHandler": [
-                                            "var id = record.get('worker_id'),",
-                                            "    worker = Ext.getStore('workers').findRecord('id', id);",
-                                            "",
-                                            "return worker.get('name');"
-                                        ]
-                                    },
-                                    "designerId": "53db1b2e-0af5-47d9-91d4-46dda7114383"
-                                }
-                            ]
+                            "designerId": "b6d95548-6477-4033-ad75-ab4b8e91a097"
                         },
                         {
                             "type": "Ext.grid.column.Number",
@@ -278,10 +435,10 @@
                 "layout|flex": null,
                 "layout|region": "east",
                 "layout|split": true,
-                "maxWidth": 500,
-                "minWidth": 500,
+                "maxWidth": 400,
+                "minWidth": 400,
                 "title": "Chat Box",
-                "width": 500
+                "width": 400
             },
             "designerId": "42591753-568e-44d8-9c7c-937e4e0cd8e7",
             "cn": [
@@ -321,6 +478,7 @@
                                 "dataIndex": "created_at",
                                 "defaultWidth": 75,
                                 "format": "H:i:s",
+                                "hidden": true,
                                 "maxWidth": 75,
                                 "minWidth": 75,
                                 "text": "Time",
@@ -444,9 +602,10 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|displayName": "footerContainer",
                 "height": 25,
                 "html": "<div class=\"copyright\">© 2014 by EeeeeK</div>",
-                "itemId": "footerPanel",
+                "itemId": null,
                 "layout|region": "south",
                 "layout|split": false
             },

@@ -15,17 +15,20 @@
 
 Ext.define('CoinEX.view.MainView', {
     extend: 'Ext.container.Viewport',
+    alias: 'widget.mainview',
 
     requires: [
         'Ext.grid.Panel',
         'Ext.grid.View',
+        'Ext.toolbar.Toolbar',
+        'Ext.form.field.ComboBox',
         'Ext.grid.column.Number',
         'Ext.grid.column.Date',
         'Ext.form.Panel',
-        'Ext.form.field.Text',
         'Ext.button.Button'
     ],
 
+    id: 'mainView',
     itemId: 'mainView',
     layout: 'border',
 
@@ -39,20 +42,102 @@ Ext.define('CoinEX.view.MainView', {
                     region: 'north',
                     split: false,
                     height: 50,
-                    html: '<div class="logo"><img src="/images/coinex_logo.png" alt="CoinEX Logo"><span>CoinEX</span></div>',
-                    itemId: 'headerPanel'
+                    html: '<div class="logo"><img src="/images/coinex_logo.png" alt="CoinEX Logo"><span>CoinEX</span></div>'
                 },
                 {
-                    xtype: 'panel',
-                    flex: 2,
+                    xtype: 'container',
+                    flex: 1,
                     region: 'center',
                     split: true,
-                    itemId: 'centerPanel',
-                    title: 'CoinEx',
-                    layout: {
-                        type: 'hbox',
-                        align: 'stretch'
-                    }
+                    layout: 'border',
+                    items: [
+                        {
+                            xtype: 'gridpanel',
+                            region: 'west',
+                            split: true,
+                            maxWidth: 200,
+                            minWidth: 200,
+                            width: 200,
+                            title: 'Currencies',
+                            store: 'trade_pairs',
+                            columns: [
+                                {
+                                    xtype: 'gridcolumn',
+                                    maxWidth: 65,
+                                    minWidth: 65,
+                                    width: 65,
+                                    defaultWidth: 65,
+                                    sortable: true,
+                                    dataIndex: 'currency_name',
+                                    text: 'Currency'
+                                },
+                                {
+                                    xtype: 'gridcolumn',
+                                    dataIndex: 'rate',
+                                    text: 'Rate',
+                                    flex: 1
+                                }
+                            ],
+                            viewConfig: {
+                                loadMask: false
+                            },
+                            dockedItems: [
+                                {
+                                    xtype: 'toolbar',
+                                    dock: 'top',
+                                    items: [
+                                        {
+                                            xtype: 'combobox',
+                                            flex: 1,
+                                            id: 'market-select',
+                                            itemId: 'market-select',
+                                            fieldLabel: 'Market',
+                                            labelStyle: 'padding-left:5px',
+                                            displayField: 'name',
+                                            forceSelection: true,
+                                            queryMode: 'local',
+                                            store: 'markets',
+                                            valueField: 'id',
+                                            listeners: {
+                                                beforerender: {
+                                                    fn: me.marketSelect,
+                                                    scope: me
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'container',
+                            flex: 1,
+                            region: 'center',
+                            split: true,
+                            layout: 'border',
+                            items: [
+                                {
+                                    xtype: 'panel',
+                                    region: 'north',
+                                    split: true,
+                                    height: 350,
+                                    maxHeight: 350,
+                                    minHeight: 350,
+                                    title: 'Trades',
+                                    layout: {
+                                        type: 'hbox',
+                                        align: 'stretch'
+                                    }
+                                },
+                                {
+                                    xtype: 'panel',
+                                    flex: 1,
+                                    region: 'center',
+                                    title: 'Orders'
+                                }
+                            ]
+                        }
+                    ]
                 },
                 {
                     xtype: 'panel',
@@ -112,7 +197,9 @@ Ext.define('CoinEX.view.MainView', {
                                         tooltip: 'Refresh Workers',
                                         handler: function(event, toolEl, panel){
                                                 Ext.getStore('worker_stats').reload();
-                                                Ext.getStore('workers').reload();
+                                                setTimeout(function () {
+                                                    Ext.getStore('workers').reload();
+                                                }, 1000)
                                             }
                                     }
                                 ]
@@ -122,12 +209,7 @@ Ext.define('CoinEX.view.MainView', {
                             columns: [
                                 {
                                     xtype: 'gridcolumn',
-                                    renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                                        var id = record.get('worker_id'),
-                                            worker = Ext.getStore('workers').findRecord('id', id);
-
-                                        return worker.get('name');
-                                    },
+                                    dataIndex: 'nickname',
                                     text: 'Worker',
                                     flex: 1
                                 },
@@ -151,9 +233,9 @@ Ext.define('CoinEX.view.MainView', {
                     split: true,
                     id: 'chatPanel',
                     itemId: 'chatPanel',
-                    maxWidth: 500,
-                    minWidth: 500,
-                    width: 500,
+                    maxWidth: 400,
+                    minWidth: 400,
+                    width: 400,
                     collapsed: true,
                     collapsible: true,
                     title: 'Chat Box',
@@ -172,6 +254,7 @@ Ext.define('CoinEX.view.MainView', {
                             columns: [
                                 {
                                     xtype: 'datecolumn',
+                                    hidden: true,
                                     maxWidth: 75,
                                     minWidth: 75,
                                     width: 75,
@@ -235,13 +318,16 @@ Ext.define('CoinEX.view.MainView', {
                     region: 'south',
                     split: false,
                     height: 25,
-                    html: '<div class="copyright">© 2014 by EeeeeK</div>',
-                    itemId: 'footerPanel'
+                    html: '<div class="copyright">© 2014 by EeeeeK</div>'
                 }
             ]
         });
 
         me.callParent(arguments);
+    },
+
+    marketSelect: function(component, eOpts) {
+        component.select(component.getStore().getAt(0));
     }
 
 });

@@ -20,7 +20,9 @@
             "userConfig": {
                 "fn": "reloadStore",
                 "implHandler": [
-                    "Ext.getStore('messages').reload();"
+                    "Ext.getStore('messages').reload({",
+                    "    addRecords: true",
+                    "});"
                 ]
             },
             "designerId": "5e622055-6dfd-4165-9eec-f1aeb528a826"
@@ -79,7 +81,7 @@
                     "    me.loadTask = Ext.TaskManager.newTask({",
                     "        run: me.reloadStore,",
                     "        scope: me,",
-                    "        interval: 2500",
+                    "        interval: 5000",
                     "    });",
                     "}",
                     "",
