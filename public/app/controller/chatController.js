@@ -25,7 +25,7 @@ Ext.define('CoinEX.controller.chatController', {
             textfield = button.previousNode('textfield'),
             success = function(response, scope) {
                 textfield.setValue('');
-                Ext.getStore('messages').reload();
+                Ext.getMessagesStore().reload();
             },
             error = function() {
                 textfield.focus();
@@ -87,6 +87,8 @@ Ext.define('CoinEX.controller.chatController', {
     },
 
     init: function(application) {
+                this.getMessagesStore().load();
+
         this.control({
             "#chatSubmit": {
                 click: this.onButtonClick
@@ -98,7 +100,7 @@ Ext.define('CoinEX.controller.chatController', {
             "#message": {
                 specialkey: this.onTextfieldSpecialkey
             },
-            "#chatGrid": {
+            "#chatgrid": {
                 itemclick: this.onViewItemClick
             }
         });

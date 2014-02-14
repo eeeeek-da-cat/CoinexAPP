@@ -7,14 +7,14 @@
     "codeClass": null,
     "userConfig": {
         "designer|userAlias": "balances",
-        "designer|userClassName": "balances",
+        "designer|userClassName": "balancesGrid",
         "disableSelection": true,
         "header": false,
         "store": "balances",
         "title": "My Balances",
         "width": 250
     },
-    "designerId": "2837dec7-ce9e-46bf-9b1c-f2edc1b46706",
+    "designerId": "2f9479db-6b03-49dc-a27d-df9c00814ac0",
     "cn": [
         {
             "type": "Ext.grid.column.Column",
@@ -31,7 +31,7 @@
                 "text": "Coin",
                 "width": 50
             },
-            "designerId": "504621c5-9220-4e53-a5bc-89e6ae96ceb6"
+            "designerId": "8eb325ea-a316-43c3-8b82-b3d45f4c2dc7"
         },
         {
             "type": "Ext.grid.column.Column",
@@ -50,7 +50,7 @@
                 "text": "Balance",
                 "width": null
             },
-            "designerId": "46b1cc84-dea7-4dc0-82b5-2e824e27476c"
+            "designerId": "1d96dace-cba3-452d-bb52-af556d71f093"
         },
         {
             "type": "Ext.grid.View",
@@ -61,12 +61,13 @@
             "codeClass": null,
             "userConfig": {
                 "designer|displayName": "gridview",
-                "loadMask": false
+                "loadMask": false,
+                "preserveScrollOnRefresh": true
             },
             "configAlternates": {
                 "loadMask": "boolean"
             },
-            "designerId": "e4207074-98dd-4c1e-a5c0-79cf46c368fd"
+            "designerId": "a07ace95-1221-423b-aa04-1bae8af31d66"
         }
     ]
 }

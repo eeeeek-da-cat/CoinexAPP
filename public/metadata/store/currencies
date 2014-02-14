@@ -11,5 +11,20 @@
         "model": "currencies",
         "storeId": "currencies"
     },
-    "designerId": "09e19ee3-665e-4eec-90b8-0a2dcf4ba39e"
+    "designerId": "09e19ee3-665e-4eec-90b8-0a2dcf4ba39e",
+    "cn": [
+        {
+            "type": "Ext.util.Sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "sorter",
+                "property": "id"
+            },
+            "designerId": "5c7e9980-e2d9-4cc1-af0b-f330f3aae788"
+        }
+    ]
 }

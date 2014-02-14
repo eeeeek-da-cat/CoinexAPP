@@ -20,17 +20,23 @@ Ext.Loader.setConfig({
 
 
 Ext.application({
+
+    requires: [
+        'CoinEX.model.tradePairs',
+        'CoinEX.model.currencies',
+        'CoinEX.model.markets'
+    ],
     models: [
         'balances',
         'currencies',
-        'tradePairs',
         'orders',
         'messages',
         'notifications',
-        'workerStats',
         'workers',
-        'orderBook',
-        'markets'
+        'markets',
+        'tradePairs',
+        'workerStats',
+        'orderBook'
     ],
     stores: [
         'balances',
@@ -46,10 +52,11 @@ Ext.application({
     ],
     views: [
         'viewport',
-        'currencies',
-        'chat',
-        'balances',
-        'workers'
+        'tradesPanel',
+        'ordersPanel',
+        'balancesGrid',
+        'workersGrid',
+        'chatPanel'
     ],
     controllers: [
         'chatController',
@@ -66,10 +73,12 @@ Ext.application({
                 'balances',
                 'notifications'
             ],
-            me = this;
+            me = this,
+            createViewPort = function () {
+                Ext.create('widget.viewport');
+            };
 
-        Ext.getStore('messages').load();
-        Ext.getStore('currencies').load();
+        Ext.getStore('notifications').on('load', createViewPort, me, {single:true});
 
         Ext.each(private_stores, function(value) {
             setTimeout(function () {
@@ -77,10 +86,6 @@ Ext.application({
             }, timeout);
             timeout += 1000;
         });
-
-        setTimeout(function () {
-            Ext.create('widget.viewport');
-        }, timeout);
     }
 
 });

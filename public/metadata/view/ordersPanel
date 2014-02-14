@@ -1,0 +1,14 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "orders",
+        "designer|userClassName": "ordersPanel",
+        "title": "Orders"
+    },
+    "designerId": "1e828388-b3ec-41cd-8083-5484588b9c0f"
+}

@@ -38,8 +38,14 @@ Ext.define('CoinEX.controller.currenciesController', {
     },
 
     onComboboxAfterRender: function(component, eOpts) {
-        var BTC = this.getMarketsStore().findRecord('name', 'BTC');
-        this.getComboBox().select(BTC);
+        var record = this.getMarketsStore().findRecord('name', 'BTC');
+
+        this.getTradePairsStore().filter('market_id', record.get('id'));
+        this.getComboBox().select(record);
+    },
+
+    onViewItemClick: function(dataview, record, item, index, e, eOpts) {
+        alert('Get data for tradepair: ' + record.get('id'));
     },
 
     generateMarkets: function(market_ids) {
@@ -64,43 +70,11 @@ Ext.define('CoinEX.controller.currenciesController', {
     },
 
     onCurrenciesLoad: function() {
-        var store = this.getTradePairsStore();
-
-        if (store.getCount() !== 0) {
-            store.reload();
-        } else {
-            store.load();
-        }
+        this.getTradePairsStore().load();
     },
 
     onTradePairsLoad: function() {
-        var me = this, currentFilters,
-            currencies = me.getCurrenciesStore(),
-            store = me.getTradePairsStore();
-
-        if(store.isFiltered()) {
-            currentFilters = store.filters;
-            store.clearFilter(true);
-        }
-
-        store.data.each(function (record) {
-            var coin = currencies.findRecord('id', record.get('currency_id'));
-            record.set('currency_name', coin.get('name'));
-            record.commit();
-        });
-
-        store.sort({
-            property: 'currency_name',
-            direction : 'ASC'
-        });
-
-        if (currentFilters !== undefined) {
-            console.log('FILTERED');
-            console.log(currentFilters);
-            Ext.each(currentFilters, function (filter) {
-                store.filter(filter);
-            });
-        }
+        var me = this, store = me.getTradePairsStore();
 
         if (!me.marketsLoaded) {
             me.generateMarkets(store.collect('market_id'));
@@ -108,7 +82,7 @@ Ext.define('CoinEX.controller.currenciesController', {
     },
 
     reloadStore: function() {
-        this.getCurrenciesStore().reload();
+        this.getTradePairsStore().reload();
     },
 
     init: function(application) {
@@ -116,6 +90,8 @@ Ext.define('CoinEX.controller.currenciesController', {
 
                 me.getCurrenciesStore().on('load', me.onCurrenciesLoad, me);
                 me.getTradePairsStore().on('load', me.onTradePairsLoad, me);
+
+                me.getCurrenciesStore().load();
 
                 if (!me.loadTask) {
                     me.loadTask = Ext.TaskManager.newTask({
@@ -131,6 +107,9 @@ Ext.define('CoinEX.controller.currenciesController', {
             "combobox#market-select": {
                 select: this.onComboboxSelect,
                 afterrender: this.onComboboxAfterRender
+            },
+            "#currenciesGrid": {
+                itemclick: this.onViewItemClick
             }
         });
     }

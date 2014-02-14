@@ -18,10 +18,12 @@ Ext.define('CoinEX.view.viewport', {
     alias: 'widget.viewport',
 
     requires: [
-        'CoinEX.view.currencies',
-        'CoinEX.view.balances',
-        'CoinEX.view.workers',
-        'CoinEX.view.chat',
+        'CoinEX.view.currenciesPanel',
+        'CoinEX.view.tradesPanel',
+        'CoinEX.view.ordersPanel',
+        'CoinEX.view.balancesGrid',
+        'CoinEX.view.workersGrid',
+        'CoinEX.view.chatPanel',
         'Ext.grid.Panel'
     ],
 
@@ -61,23 +63,14 @@ Ext.define('CoinEX.view.viewport', {
                             layout: 'border',
                             items: [
                                 {
-                                    xtype: 'panel',
+                                    xtype: 'trades',
                                     region: 'north',
-                                    split: true,
-                                    height: 350,
-                                    maxHeight: 350,
-                                    minHeight: 350,
-                                    title: 'Trades',
-                                    layout: {
-                                        type: 'hbox',
-                                        align: 'stretch'
-                                    }
+                                    split: true
                                 },
                                 {
-                                    xtype: 'panel',
+                                    xtype: 'orders',
                                     flex: 1,
-                                    region: 'center',
-                                    title: 'Orders'
+                                    region: 'center'
                                 }
                             ]
                         }

@@ -57,10 +57,33 @@
             },
             "codeClass": null,
             "userConfig": {
+                "mapping": "worker_id",
                 "name": "worker_name",
                 "type": "string"
             },
-            "designerId": "65cb9019-1918-4a74-b9e3-812e9fecd098"
+            "designerId": "65cb9019-1918-4a74-b9e3-812e9fecd098",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "v",
+                            "rec"
+                        ],
+                        "fn": "convert",
+                        "implHandler": [
+                            "var currency = Ext.getStore('workers').findRecord('id', v);",
+                            "return currency.get('name');"
+                        ]
+                    },
+                    "designerId": "ab5ee867-5462-4ca3-a945-c398868ecc29"
+                }
+            ]
         },
         {
             "type": "Ext.data.Field",

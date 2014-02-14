@@ -19,7 +19,9 @@ Ext.define('CoinEX.model.tradePairs', {
     requires: [
         'Ext.data.Field',
         'Ext.data.proxy.Ajax',
-        'Ext.data.reader.Json'
+        'Ext.data.reader.Json',
+        'CoinEX.model.currencies',
+        'CoinEX.store.currencies'
     ],
 
     fields: [
@@ -40,6 +42,11 @@ Ext.define('CoinEX.model.tradePairs', {
             type: 'int'
         },
         {
+            convert: function(v, rec) {
+                var currency = Ext.getStore('currencies').findRecord('id', Number(v));
+                return currency.get('name');
+            },
+            mapping: 'currency_id',
             name: 'currency_name',
             type: 'string'
         },
@@ -73,8 +80,22 @@ Ext.define('CoinEX.model.tradePairs', {
         },
         {
             convert: function(v, rec) {
-                return (v/100000000).toString();
+                var n = Number(v/100000000);
 
+
+                var info = /([\d\.]+)e-(\d+)/i.exec(n);
+                if (!info) {
+                    return n;
+                }
+
+                var num = info[1].replace('.', ''), numDecs = info[2] - 1;
+                var output = "0.";
+                for (var i = 0; i < numDecs; i++) {
+                    output += "0";
+                }
+                output += num;
+
+                return output;
             },
             mapping: 'last_price',
             name: 'rate',

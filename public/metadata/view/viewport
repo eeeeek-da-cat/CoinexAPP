@@ -66,8 +66,8 @@
                         "layout|region": "west",
                         "layout|split": true
                     },
-                    "designerId": "9619e7e5-1aec-47c0-b82b-b62c54f12afb",
-                    "masterInstanceId": "9bbf173e-2c1d-4a5a-add0-ab327b3d7ccd"
+                    "designerId": "1d9f7092-9bc8-4dc6-84e9-86c7143c6173",
+                    "masterInstanceId": "79552c93-b4b5-47a0-89e4-cbf47ce039e7"
                 },
                 {
                     "type": "Ext.container.Container",
@@ -86,39 +86,32 @@
                     "designerId": "c105332c-28e5-47fc-a61c-91233b06ace7",
                     "cn": [
                         {
-                            "type": "Ext.panel.Panel",
+                            "type": "linkedinstance",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "container|align": "stretch",
-                                "designer|displayName": "tradesPanel",
-                                "height": 350,
-                                "layout": "hbox",
                                 "layout|region": "north",
-                                "layout|split": true,
-                                "maxHeight": 350,
-                                "minHeight": 350,
-                                "title": "Trades"
+                                "layout|split": true
                             },
-                            "designerId": "c35b7c90-044b-49da-9ddf-40f75e7b8efe"
+                            "designerId": "efe8f29e-094a-4004-a4c8-c8d64acef384",
+                            "masterInstanceId": "e079fd32-896e-49f4-b2d1-3c1bfe6aa5c9"
                         },
                         {
-                            "type": "Ext.panel.Panel",
+                            "type": "linkedinstance",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|displayName": "ordersPanel",
                                 "layout|flex": 1,
-                                "layout|region": "center",
-                                "title": "Orders"
+                                "layout|region": "center"
                             },
-                            "designerId": "5420593c-6331-46e7-873a-ff48e3625a4c"
+                            "designerId": "64751085-20dd-4eb8-9cc4-63eecb659c21",
+                            "masterInstanceId": "1e828388-b3ec-41cd-8083-5484588b9c0f"
                         }
                     ]
                 }
@@ -159,8 +152,8 @@
                     "userConfig": {
                         "layout|flex": 3
                     },
-                    "designerId": "176a2243-7e97-40da-ba36-743c60076175",
-                    "masterInstanceId": "2837dec7-ce9e-46bf-9b1c-f2edc1b46706"
+                    "designerId": "d34a3bf7-557a-48e5-9a2c-7f7b6e91cbba",
+                    "masterInstanceId": "2f9479db-6b03-49dc-a27d-df9c00814ac0"
                 },
                 {
                     "type": "linkedinstance",
@@ -172,8 +165,8 @@
                     "userConfig": {
                         "layout|flex": 1
                     },
-                    "designerId": "f252d376-5cef-43b0-8456-54343402f252",
-                    "masterInstanceId": "0fbd02aa-bd94-43b8-a5c3-c8ca3a3fc0c1"
+                    "designerId": "9d471951-22b6-46be-b2ac-dd82e67cc423",
+                    "masterInstanceId": "76194a36-6f24-433a-9181-b84db90bde8a"
                 }
             ]
         },
@@ -185,12 +178,13 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|displayName": "chatPanel",
                 "layout|flex": null,
                 "layout|region": "east",
                 "layout|split": true
             },
-            "designerId": "c0f6cc6b-71cb-4468-b900-966374bcc50d",
-            "masterInstanceId": "8fd02fde-10a8-43c8-94d0-07ee35bcdd9b"
+            "designerId": "74fc6df8-4ba0-4885-8b2a-012a23a7efff",
+            "masterInstanceId": "d4893373-0b53-413d-9f24-a1412cab2476"
         },
         {
             "type": "Ext.container.Container",

@@ -7,14 +7,18 @@
     "codeClass": null,
     "userConfig": {
         "designer|userAlias": "currencies",
-        "designer|userClassName": "currencies",
+        "designer|userClassName": "currenciesPanel",
+        "disableSelection": true,
         "maxWidth": 200,
         "minWidth": 200,
+        "requires": [
+            "CoinEX.model.currencies"
+        ],
         "store": "tradePairs",
         "title": "Currencies",
         "width": 200
     },
-    "designerId": "9bbf173e-2c1d-4a5a-add0-ab327b3d7ccd",
+    "designerId": "79552c93-b4b5-47a0-89e4-cbf47ce039e7",
     "cn": [
         {
             "type": "Ext.grid.column.Column",
@@ -28,11 +32,10 @@
                 "defaultWidth": 65,
                 "maxWidth": 65,
                 "minWidth": 65,
-                "sortable": true,
                 "text": "Currency",
                 "width": 65
             },
-            "designerId": "5797179c-54ac-423e-88c7-9a3a8f035d08"
+            "designerId": "f628a02e-6437-4430-bfc7-5a69098d31da"
         },
         {
             "type": "Ext.grid.column.Column",
@@ -46,7 +49,7 @@
                 "flex": 1,
                 "text": "Rate"
             },
-            "designerId": "ddcc45af-12b5-455d-974e-3e901e35ebb1"
+            "designerId": "0dcb5528-d170-4961-8208-7a66f1c77ef3"
         },
         {
             "type": "Ext.grid.View",
@@ -57,13 +60,16 @@
             "codeClass": null,
             "userConfig": {
                 "designer|displayName": "gridview",
+                "id": "currenciesGrid",
+                "itemId": "currenciesGrid",
                 "loadMask": false,
-                "markDirty": null
+                "markDirty": null,
+                "preserveScrollOnRefresh": true
             },
             "configAlternates": {
                 "loadMask": "boolean"
             },
-            "designerId": "4b8c6d7b-93b7-42d5-a9da-4d42358ce673"
+            "designerId": "648c1481-5ba5-4121-b5f0-2993e20e0429"
         },
         {
             "type": "Ext.toolbar.Toolbar",
@@ -76,7 +82,7 @@
                 "designer|displayName": "toolbar",
                 "dock": "top"
             },
-            "designerId": "54a71369-9ddf-427f-9bb8-5580e87cf3f8",
+            "designerId": "e9a3e05f-abec-443e-b463-f83cf25bba9c",
             "cn": [
                 {
                     "type": "Ext.form.field.ComboBox",
@@ -97,7 +103,7 @@
                         "store": "markets",
                         "valueField": "id"
                     },
-                    "designerId": "f8d01880-683d-40fc-a4d2-0fdcc33539cc"
+                    "designerId": "8c06f6ef-53f8-4bf3-90b0-c5a924d8d0a5"
                 }
             ]
         }

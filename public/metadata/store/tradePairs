@@ -14,5 +14,20 @@
     "configAlternates": {
         "marketsLoaded": "boolean"
     },
-    "designerId": "958a5477-8ebd-47f1-9aa9-c1e367810a10"
+    "designerId": "958a5477-8ebd-47f1-9aa9-c1e367810a10",
+    "cn": [
+        {
+            "type": "Ext.util.Sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "sorter",
+                "property": "currency_name"
+            },
+            "designerId": "02f9af1e-b7dd-4a5c-8634-f129fd1dbf59"
+        }
+    ]
 }

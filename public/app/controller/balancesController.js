@@ -48,7 +48,7 @@ Ext.define('CoinEX.controller.balancesController', {
         var me = this;
         me.getBalancesStore().reload();
         setTimeout(function () {
-            me.getWorkersStore().reload();
+            me.getWorkerStatsStore().reload();
         }, 1000);
     },
 

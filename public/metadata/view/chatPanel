@@ -10,8 +10,8 @@
         "collapsible": true,
         "container|align": "stretch",
         "designer|userAlias": "chat",
-        "designer|userClassName": "chat",
-        "id": "chatPanel",
+        "designer|userClassName": "chatPanel",
+        "id": "chatPanel1",
         "itemId": "chatPanel",
         "layout": "vbox",
         "maxWidth": 400,
@@ -19,7 +19,7 @@
         "title": "Chat Box",
         "width": 400
     },
-    "designerId": "8fd02fde-10a8-43c8-94d0-07ee35bcdd9b",
+    "designerId": "d4893373-0b53-413d-9f24-a1412cab2476",
     "cn": [
         {
             "type": "Ext.grid.Panel",
@@ -44,7 +44,7 @@
                 "viewConfig": "object",
                 "invalidateScrollerOnRefresh": "boolean"
             },
-            "designerId": "1b6f6026-0649-4c58-adad-80825a18145d",
+            "designerId": "781ee279-8159-4e5a-bd64-f7556676d3fb",
             "cn": [
                 {
                     "type": "Ext.grid.column.Date",
@@ -63,7 +63,7 @@
                         "text": "Time",
                         "width": 75
                     },
-                    "designerId": "accab792-7207-42d2-ac1d-f9d848fb6ba1"
+                    "designerId": "b50a85a3-f9b8-4d97-946d-a97a7cd76c90"
                 },
                 {
                     "type": "Ext.grid.column.Column",
@@ -76,7 +76,7 @@
                         "dataIndex": "name",
                         "text": "User"
                     },
-                    "designerId": "8eebcdd5-b574-4b73-9070-994c5efe3721"
+                    "designerId": "01b1a4f5-8d06-4a7b-8746-67be872592c3"
                 },
                 {
                     "type": "Ext.grid.column.Column",
@@ -90,7 +90,7 @@
                         "flex": 1,
                         "text": "Message"
                     },
-                    "designerId": "6d209156-6710-4cce-aa80-5badceed8f6e"
+                    "designerId": "d7f84735-c068-40da-bd04-25b9bcbcee8b"
                 },
                 {
                     "type": "Ext.grid.View",
@@ -101,14 +101,14 @@
                     "codeClass": null,
                     "userConfig": {
                         "designer|displayName": "gridview",
-                        "id": "chatGrid",
+                        "id": "chatgrid",
                         "loadMask": false,
                         "preserveScrollOnRefresh": true
                     },
                     "configAlternates": {
                         "loadMask": "boolean"
                     },
-                    "designerId": "fe68c416-0a1c-4d29-a6a9-4e0e9a59caee"
+                    "designerId": "a3af5f8b-11fd-4d55-afc7-c9316d4f56bd"
                 }
             ]
         },
@@ -133,7 +133,7 @@
                 "title": "Message",
                 "url": "/api/messages"
             },
-            "designerId": "041a582a-5035-4174-938e-1c8e7bdd448a",
+            "designerId": "629b8570-f993-4711-9606-efb4124fb821",
             "cn": [
                 {
                     "type": "Ext.form.field.Text",
@@ -146,14 +146,14 @@
                         "blankText": "Type your message",
                         "designer|displayName": "body",
                         "fieldLabel": null,
-                        "id": "message",
+                        "id": "message1",
                         "inputId": null,
                         "itemId": "message",
                         "layout|flex": 1,
                         "margin": "0 5px 0 0",
                         "name": "body"
                     },
-                    "designerId": "53edfdf6-8cb0-4b88-be17-3cac3d7ea2f5"
+                    "designerId": "ae0251c2-072c-458c-933a-bb0d225ce904"
                 },
                 {
                     "type": "Ext.button.Button",
@@ -167,7 +167,7 @@
                         "layout|flex": null,
                         "text": "Send"
                     },
-                    "designerId": "2b89eb49-d224-45b8-849a-e21cdee55f78"
+                    "designerId": "2d7f2f58-fa24-482c-98fb-a858e9a19666"
                 }
             ]
         }

@@ -6,7 +6,11 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "tradePairs"
+        "designer|userClassName": "tradePairs",
+        "requires": [
+            "CoinEX.model.currencies",
+            "CoinEX.store.currencies"
+        ]
     },
     "designerId": "32845b37-b457-4533-b1f7-d52fa6ecce6b",
     "cn": [
@@ -70,10 +74,33 @@
             },
             "codeClass": null,
             "userConfig": {
+                "mapping": "currency_id",
                 "name": "currency_name",
                 "type": "string"
             },
-            "designerId": "c0187546-d068-4738-9e3c-ab0ae5fc838d"
+            "designerId": "a0f72a48-845e-4058-b6f0-1a4595de87fe",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "v",
+                            "rec"
+                        ],
+                        "fn": "convert",
+                        "implHandler": [
+                            "var currency = Ext.getStore('currencies').findRecord('id', Number(v));",
+                            "return currency.get('name');"
+                        ]
+                    },
+                    "designerId": "0b8a335d-3d13-458b-9651-81d09b286250"
+                }
+            ]
         },
         {
             "type": "Ext.data.Field",
@@ -194,8 +221,22 @@
                         ],
                         "fn": "convert",
                         "implHandler": [
-                            "return (v/100000000).toString();",
-                            ""
+                            "var n = Number(v/100000000);",
+                            "",
+                            "",
+                            "var info = /([\\d\\.]+)e-(\\d+)/i.exec(n);",
+                            "if (!info) {",
+                            "    return n;",
+                            "}",
+                            "",
+                            "var num = info[1].replace('.', ''), numDecs = info[2] - 1;",
+                            "var output = \"0.\";",
+                            "for (var i = 0; i < numDecs; i++) {",
+                            "    output += \"0\";",
+                            "}",
+                            "output += num;",
+                            "",
+                            "return output;"
                         ]
                     },
                     "designerId": "88508bdd-e653-4982-8ca9-af43911d2955"

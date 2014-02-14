@@ -36,6 +36,11 @@ Ext.define('CoinEX.model.workerStats', {
             type: 'int'
         },
         {
+            convert: function(v, rec) {
+                var currency = Ext.getStore('workers').findRecord('id', v);
+                return currency.get('name');
+            },
+            mapping: 'worker_id',
             name: 'worker_name',
             type: 'string'
         },

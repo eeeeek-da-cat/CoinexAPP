@@ -17,7 +17,8 @@ Ext.define('CoinEX.store.tradePairs', {
     extend: 'Ext.data.Store',
 
     requires: [
-        'CoinEX.model.tradePairs'
+        'CoinEX.model.tradePairs',
+        'Ext.util.Sorter'
     ],
 
     constructor: function(cfg) {
@@ -26,7 +27,10 @@ Ext.define('CoinEX.store.tradePairs', {
         me.callParent([Ext.apply({
             autoLoad: false,
             model: 'CoinEX.model.tradePairs',
-            storeId: 'tradePairs'
+            storeId: 'tradePairs',
+            sorters: {
+                property: 'currency_name'
+            }
         }, cfg)]);
     }
 });

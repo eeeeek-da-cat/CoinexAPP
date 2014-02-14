@@ -14,16 +14,21 @@
         "models": [
             "balances",
             "currencies",
-            "trade_pairs",
             "orders",
             "messages",
             "notifications",
-            "worker_stats",
             "workers",
-            "order_book",
-            "markets"
+            "markets",
+            "tradePairs",
+            "workerStats",
+            "orderBook"
         ],
         "name": "CoinEX",
+        "requires": [
+            "CoinEX.model.tradePairs",
+            "CoinEX.model.currencies",
+            "CoinEX.model.markets"
+        ],
         "stores": [
             "balances",
             "currencies",
@@ -38,10 +43,11 @@
         ],
         "views": [
             "viewport",
-            "currencies",
-            "chat",
-            "balances",
-            "workers"
+            "tradesPanel",
+            "ordersPanel",
+            "balancesGrid",
+            "workersGrid",
+            "chatPanel"
         ]
     },
     "designerId": "application",
@@ -63,21 +69,19 @@
                     "        'balances',",
                     "        'notifications'",
                     "    ],",
-                    "    me = this;",
+                    "    me = this,",
+                    "    createViewPort = function () {",
+                    "        Ext.create('widget.viewport');",
+                    "    };",
                     "",
-                    "Ext.getStore('messages').load();",
-                    "Ext.getStore('currencies').load();",
+                    "Ext.getStore('notifications').on('load', createViewPort, me, {single:true});",
                     "",
                     "Ext.each(private_stores, function(value) {",
                     "    setTimeout(function () {",
                     "        Ext.getStore(value).load();",
                     "    }, timeout);",
                     "    timeout += 1000;",
-                    "});",
-                    "",
-                    "setTimeout(function () {",
-                    "    Ext.create('widget.viewport');",
-                    "}, timeout);"
+                    "});"
                 ]
             },
             "designerId": "14c1d48e-eaae-4b9b-bcbd-135f9a0060d7"

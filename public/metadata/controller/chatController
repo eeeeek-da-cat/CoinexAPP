@@ -46,7 +46,7 @@
                     "    textfield = button.previousNode('textfield'),",
                     "    success = function(response, scope) {",
                     "        textfield.setValue('');",
-                    "        Ext.getStore('messages').reload();",
+                    "        Ext.getMessagesStore().reload();",
                     "    },",
                     "    error = function() {",
                     "        textfield.focus();",
@@ -125,7 +125,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|controlQuery": "#chatGrid",
+                "designer|controlQuery": "#chatgrid",
                 "designer|targetType": "Ext.grid.View",
                 "fn": "onViewItemClick",
                 "implHandler": [
@@ -164,6 +164,24 @@
                 "scope": "me"
             },
             "designerId": "34b7be52-fb25-43db-8a6b-505d725c58b7"
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "application"
+                ],
+                "fn": "init",
+                "implHandler": [
+                    "this.getMessagesStore().load();"
+                ]
+            },
+            "designerId": "c6184589-c642-4e2c-a4ec-a96bd73cdf64"
         }
     ]
 }

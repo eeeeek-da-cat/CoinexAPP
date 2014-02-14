@@ -7,17 +7,14 @@
     "codeClass": null,
     "userConfig": {
         "designer|userAlias": "workers",
-        "designer|userClassName": "workers",
+        "designer|userClassName": "workersGrid",
         "header": [
             "{",
             "    tools:[{",
             "        type:'refresh',",
             "        tooltip: 'Refresh Workers',",
             "        handler: function(event, toolEl, panel){",
-            "            Ext.getStore('worker_stats').reload();",
-            "            setTimeout(function () {",
-            "                Ext.getStore('workers').reload();",
-            "            }, 1000)",
+            "            Ext.getStore('workerStats').reload();",
             "        }",
             "    }]        ",
             "}"
@@ -29,7 +26,7 @@
     "configAlternates": {
         "header": "object"
     },
-    "designerId": "0fbd02aa-bd94-43b8-a5c3-c8ca3a3fc0c1",
+    "designerId": "76194a36-6f24-433a-9181-b84db90bde8a",
     "cn": [
         {
             "type": "Ext.grid.column.Column",
@@ -39,7 +36,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dataIndex": "nickname",
+                "dataIndex": "worker_name",
                 "defaultWidth": null,
                 "flex": 1,
                 "maxWidth": null,
@@ -47,7 +44,7 @@
                 "text": "Worker",
                 "width": null
             },
-            "designerId": "b6d95548-6477-4033-ad75-ab4b8e91a097"
+            "designerId": "bcc7c6d3-a8da-44ab-8d14-9adbf200594c"
         },
         {
             "type": "Ext.grid.column.Number",
@@ -65,7 +62,7 @@
                 "text": "Khash/sec",
                 "width": 80
             },
-            "designerId": "782c5655-9360-4881-8020-e8f00d545504"
+            "designerId": "0f1b4826-2c94-4c1c-9c8d-e2a6b52b4abf"
         },
         {
             "type": "Ext.grid.View",
@@ -80,7 +77,7 @@
             "configAlternates": {
                 "loadMask": "boolean"
             },
-            "designerId": "ba9f13aa-2d80-4d47-92ba-20a0560fff41"
+            "designerId": "e9e45517-ad16-40e8-a540-12140b604ee3"
         }
     ]
 }

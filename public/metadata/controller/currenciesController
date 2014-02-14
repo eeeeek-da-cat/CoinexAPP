@@ -77,7 +77,7 @@
                     "var me = this,",
                     "    markets = me.getMarketsStore(),",
                     "    currencies = me.getCurrenciesStore();",
-                    "    ",
+                    "",
                     "",
                     "if (markets.count() !== 0) {",
                     "    markets.removeAll();",
@@ -106,13 +106,7 @@
             "userConfig": {
                 "fn": "onCurrenciesLoad",
                 "implHandler": [
-                    "var store = this.getTradePairsStore();",
-                    "",
-                    "if (store.getCount() !== 0) {",
-                    "    store.reload();",
-                    "} else {",
-                    "    store.load();",
-                    "}"
+                    "this.getTradePairsStore().load();"
                 ]
             },
             "designerId": "6cc6d446-f2b6-4650-92a9-2f89bde6480d"
@@ -127,33 +121,7 @@
             "userConfig": {
                 "fn": "onTradePairsLoad",
                 "implHandler": [
-                    "var me = this, currentFilters,",
-                    "    currencies = me.getCurrenciesStore(),",
-                    "    store = me.getTradePairsStore();",
-                    "",
-                    "if(store.isFiltered()) {",
-                    "    currentFilters = store.filters;",
-                    "    store.clearFilter(true);",
-                    "}",
-                    "",
-                    "store.data.each(function (record) {",
-                    "    var coin = currencies.findRecord('id', record.get('currency_id'));",
-                    "    record.set('currency_name', coin.get('name'));",
-                    "    record.commit();",
-                    "});",
-                    "",
-                    "store.sort({",
-                    "    property: 'currency_name',",
-                    "    direction : 'ASC'",
-                    "});",
-                    "",
-                    "if (currentFilters !== undefined) {",
-                    "    console.log('FILTERED');",
-                    "    console.log(currentFilters);",
-                    "    Ext.each(currentFilters, function (filter) {",
-                    "        store.filter(filter);",
-                    "    });",
-                    "}",
+                    "var me = this, store = me.getTradePairsStore();",
                     "",
                     "if (!me.marketsLoaded) {",
                     "    me.generateMarkets(store.collect('market_id'));",
@@ -172,7 +140,7 @@
             "userConfig": {
                 "fn": "reloadStore",
                 "implHandler": [
-                    "this.getCurrenciesStore().reload();"
+                    "this.getTradePairsStore().reload();"
                 ]
             },
             "designerId": "b91720d6-f542-4f81-80d6-3edafd07b4ac"
@@ -194,6 +162,8 @@
                     "",
                     "me.getCurrenciesStore().on('load', me.onCurrenciesLoad, me);",
                     "me.getTradePairsStore().on('load', me.onTradePairsLoad, me);",
+                    "",
+                    "me.getCurrenciesStore().load();",
                     "",
                     "if (!me.loadTask) {",
                     "    me.loadTask = Ext.TaskManager.newTask({",
@@ -220,13 +190,34 @@
                 "designer|targetType": "Ext.form.field.ComboBox",
                 "fn": "onComboboxAfterRender",
                 "implHandler": [
-                    "var BTC = this.getMarketsStore().findRecord('name', 'BTC');",
-                    "this.getComboBox().select(BTC);"
+                    "var record = this.getMarketsStore().findRecord('name', 'BTC');",
+                    "",
+                    "this.getTradePairsStore().filter('market_id', record.get('id'));",
+                    "this.getComboBox().select(record);"
                 ],
                 "name": "afterrender",
                 "scope": "me"
             },
             "designerId": "0e2e641f-bf78-4111-a473-69931d63fc9e"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#currenciesGrid",
+                "designer|targetType": "Ext.grid.View",
+                "fn": "onViewItemClick",
+                "implHandler": [
+                    "alert('Get data for tradepair: ' + record.get('id'));"
+                ],
+                "name": "itemclick",
+                "scope": "me"
+            },
+            "designerId": "e68c25c9-bc76-4b62-8a79-0b45048323c2"
         }
     ]
 }
