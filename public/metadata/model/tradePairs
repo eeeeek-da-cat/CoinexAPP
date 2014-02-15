@@ -22,6 +22,19 @@
             },
             "codeClass": null,
             "userConfig": {
+                "name": "id",
+                "type": "int"
+            },
+            "designerId": "86f96f65-66fe-4f05-8bba-84bdb85e2b03"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "buy_fee",
                 "type": "float"
             },
@@ -221,22 +234,7 @@
                         ],
                         "fn": "convert",
                         "implHandler": [
-                            "var n = Number(v/100000000);",
-                            "",
-                            "",
-                            "var info = /([\\d\\.]+)e-(\\d+)/i.exec(n);",
-                            "if (!info) {",
-                            "    return n;",
-                            "}",
-                            "",
-                            "var num = info[1].replace('.', ''), numDecs = info[2] - 1;",
-                            "var output = \"0.\";",
-                            "for (var i = 0; i < numDecs; i++) {",
-                            "    output += \"0\";",
-                            "}",
-                            "output += num;",
-                            "",
-                            "return output;"
+                            "return CoinEX.Utilities.toSatoshi(v);"
                         ]
                     },
                     "designerId": "88508bdd-e653-4982-8ca9-af43911d2955"

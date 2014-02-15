@@ -71,6 +71,8 @@ Ext.define('CoinEX.view.currenciesPanel', {
                             itemId: 'market-select',
                             fieldLabel: 'Market',
                             labelStyle: 'padding-left:5px',
+                            allowBlank: false,
+                            editable: false,
                             displayField: 'name',
                             forceSelection: true,
                             queryMode: 'local',

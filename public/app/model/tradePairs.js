@@ -26,6 +26,10 @@ Ext.define('CoinEX.model.tradePairs', {
 
     fields: [
         {
+            name: 'id',
+            type: 'int'
+        },
+        {
             name: 'buy_fee',
             type: 'float'
         },
@@ -80,22 +84,7 @@ Ext.define('CoinEX.model.tradePairs', {
         },
         {
             convert: function(v, rec) {
-                var n = Number(v/100000000);
-
-
-                var info = /([\d\.]+)e-(\d+)/i.exec(n);
-                if (!info) {
-                    return n;
-                }
-
-                var num = info[1].replace('.', ''), numDecs = info[2] - 1;
-                var output = "0.";
-                for (var i = 0; i < numDecs; i++) {
-                    output += "0";
-                }
-                output += num;
-
-                return output;
+                return CoinEX.Utilities.toSatoshi(v);
             },
             mapping: 'last_price',
             name: 'rate',

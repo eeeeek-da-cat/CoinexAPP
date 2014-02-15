@@ -8,7 +8,155 @@
     "userConfig": {
         "designer|userAlias": "orders",
         "designer|userClassName": "ordersPanel",
+        "layout": "border",
         "title": "Orders"
     },
-    "designerId": "1e828388-b3ec-41cd-8083-5484588b9c0f"
+    "designerId": "1e828388-b3ec-41cd-8083-5484588b9c0f",
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "layout|region": "west",
+                "padding": "15px",
+                "store": "sellOrderBook",
+                "title": "Sell Orders",
+                "width": 150
+            },
+            "designerId": "4123f0a3-225b-4a93-9548-6a848790a452",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "price",
+                        "flex": 1,
+                        "text": "Price"
+                    },
+                    "designerId": "56826e77-4ad2-4765-ad27-d5bc1c63c670"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "coins",
+                        "flex": 1,
+                        "text": "Amount"
+                    },
+                    "designerId": "151217d4-f39c-4d67-9c0c-ee3c66e8c203"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "total",
+                        "flex": 1,
+                        "text": "Total"
+                    },
+                    "designerId": "b907a5c9-501e-45e7-bcf1-de392641a67c"
+                },
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "gridview"
+                    },
+                    "designerId": "4d90e38b-af74-4b61-9c7f-3250d79bd838"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "layout|region": "center",
+                "padding": "15px",
+                "store": "buyOrderBook",
+                "title": "Buy Orders"
+            },
+            "designerId": "f4c5f585-07a9-44a5-b5fa-9e3401e5835d",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "price",
+                        "flex": 1,
+                        "text": "Price"
+                    },
+                    "designerId": "50e6790f-bd20-4e31-b3da-e83c67e08e82"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "coins",
+                        "flex": 1,
+                        "text": "Amount"
+                    },
+                    "designerId": "7d003b6c-a92e-430e-9aef-2494260d061d"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "total",
+                        "flex": 1,
+                        "text": "Total"
+                    },
+                    "designerId": "7f59d1cc-b577-4d32-8512-7314569c0c7c"
+                },
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "gridview"
+                    },
+                    "designerId": "4042fc93-6c12-4e7c-8b9d-2f7f618a900f"
+                }
+            ]
+        }
+    ]
 }

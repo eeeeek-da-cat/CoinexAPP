@@ -129,7 +129,7 @@
                         ],
                         "fn": "convert",
                         "implHandler": [
-                            "return (v/100000000).toString();"
+                            "return CoinEX.Utilities.toSatoshi(v);"
                         ]
                     },
                     "designerId": "bbb6b5a1-a8ed-41c3-80ca-6c026853e241"

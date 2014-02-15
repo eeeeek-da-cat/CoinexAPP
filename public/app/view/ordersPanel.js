@@ -17,10 +17,79 @@ Ext.define('CoinEX.view.ordersPanel', {
     extend: 'Ext.panel.Panel',
     alias: 'widget.orders',
 
+    requires: [
+        'Ext.grid.Panel',
+        'Ext.grid.column.Column',
+        'Ext.grid.View'
+    ],
+
+    layout: 'border',
     title: 'Orders',
 
     initComponent: function() {
         var me = this;
+
+        Ext.applyIf(me, {
+            items: [
+                {
+                    xtype: 'gridpanel',
+                    flex: 1,
+                    region: 'west',
+                    padding: '15px',
+                    width: 150,
+                    title: 'Sell Orders',
+                    store: 'sellOrderBook',
+                    columns: [
+                        {
+                            xtype: 'gridcolumn',
+                            dataIndex: 'price',
+                            text: 'Price',
+                            flex: 1
+                        },
+                        {
+                            xtype: 'gridcolumn',
+                            dataIndex: 'coins',
+                            text: 'Amount',
+                            flex: 1
+                        },
+                        {
+                            xtype: 'gridcolumn',
+                            dataIndex: 'total',
+                            text: 'Total',
+                            flex: 1
+                        }
+                    ]
+                },
+                {
+                    xtype: 'gridpanel',
+                    flex: 1,
+                    region: 'center',
+                    padding: '15px',
+                    title: 'Buy Orders',
+                    store: 'buyOrderBook',
+                    columns: [
+                        {
+                            xtype: 'gridcolumn',
+                            dataIndex: 'price',
+                            text: 'Price',
+                            flex: 1
+                        },
+                        {
+                            xtype: 'gridcolumn',
+                            dataIndex: 'coins',
+                            text: 'Amount',
+                            flex: 1
+                        },
+                        {
+                            xtype: 'gridcolumn',
+                            dataIndex: 'total',
+                            text: 'Total',
+                            flex: 1
+                        }
+                    ]
+                }
+            ]
+        });
 
         me.callParent(arguments);
     }

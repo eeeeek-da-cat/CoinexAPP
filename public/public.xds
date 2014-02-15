@@ -43,10 +43,11 @@
             "d72f8fb3-eac4-4072-97bb-f88e7fb92f4d",
             "11da1420-9263-44b8-8903-ebcbb02a96b4",
             "d7a43eb4-fd10-46c6-887b-c5a6e6fbbd83",
-            "e2c1ae3d-6a1a-4fed-ba18-a2f1e5aa34d8",
             "958a5477-8ebd-47f1-9aa9-c1e367810a10",
             "ba350ec6-cd3a-4423-bd92-221234c44c4e",
-            "564630fd-001c-4d45-83a8-1ed7d3134c55"
+            "564630fd-001c-4d45-83a8-1ed7d3134c55",
+            "a62e432c-fea9-435c-9bdf-c2abff0b4a5c",
+            "f6695c30-400b-4b5d-a253-a65ec74c5fa2"
         ],
         "controller": [
             "828047a2-5d16-4b1c-8f0e-37ced79c53aa",
@@ -67,7 +68,8 @@
         ],
         "resource": [
             "76d17007-2335-4c00-b7ab-dad9b996582b",
-            "a1b8d322-59ce-44cb-9641-1ba0ee687644"
+            "a1b8d322-59ce-44cb-9641-1ba0ee687644",
+            "77426852-707a-4fed-a86d-c8ac522ad4c4"
         ],
         "app": [
             "application"

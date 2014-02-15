@@ -6,7 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userAlias": "viewport",
+        "designer|userAlias": null,
         "designer|userClassName": "viewport",
         "id": "mainView",
         "itemId": "mainView",

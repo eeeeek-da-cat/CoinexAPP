@@ -15,7 +15,6 @@
 
 Ext.define('CoinEX.view.viewport', {
     extend: 'Ext.container.Viewport',
-    alias: 'widget.viewport',
 
     requires: [
         'CoinEX.view.currenciesPanel',

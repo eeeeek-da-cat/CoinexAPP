@@ -34,12 +34,39 @@ Ext.define('CoinEX.model.orderBook', {
         {
             name: 'bid',
             type: 'boolean'
+        },
+        {
+            convert: function(v, rec) {
+                return CoinEX.Utilities.toSatoshi(v);
+            },
+            mapping: 'amount',
+            name: 'coins',
+            type: 'float'
+        },
+        {
+            convert: function(v, rec) {
+                return CoinEX.Utilities.toSatoshi(v);
+            },
+            mapping: 'rate',
+            name: 'price',
+            type: 'float'
+        },
+        {
+            convert: function(v, rec) {
+                return CoinEX.Utilities.toSatoshi(rec.get('amount') * rec.get('rate'));
+            },
+            mapping: 'amount',
+            name: 'total',
+            type: 'float'
         }
     ],
 
     proxy: {
         type: 'ajax',
-        url: '/api/orders/book?tradePair=46',
+        extraParams: {
+            tradePair: 46
+        },
+        url: '/api/orders/book',
         reader: {
             type: 'json',
             root: 'order_book'

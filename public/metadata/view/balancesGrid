@@ -24,23 +24,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dataIndex": "currency_name",
-                "defaultWidth": 50,
-                "maxWidth": 50,
-                "minWidth": 50,
-                "text": "Coin",
-                "width": 50
-            },
-            "designerId": "8eb325ea-a316-43c3-8b82-b3d45f4c2dc7"
-        },
-        {
-            "type": "Ext.grid.column.Column",
-            "reference": {
-                "name": "columns",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
                 "align": "right",
                 "dataIndex": "balance",
                 "defaultWidth": null,
@@ -51,6 +34,23 @@
                 "width": null
             },
             "designerId": "1d96dace-cba3-452d-bb52-af556d71f093"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "currency_name",
+                "defaultWidth": 50,
+                "maxWidth": 50,
+                "minWidth": 50,
+                "text": "Coin",
+                "width": 50
+            },
+            "designerId": "8eb325ea-a316-43c3-8b82-b3d45f4c2dc7"
         },
         {
             "type": "Ext.grid.View",

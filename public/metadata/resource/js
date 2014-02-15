@@ -1,0 +1,13 @@
+{
+    "type": "jsresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "js",
+        "url": "Chart/ux/HighStock.compiled.js"
+    },
+    "designerId": "77426852-707a-4fed-a86d-c8ac522ad4c4"
+}

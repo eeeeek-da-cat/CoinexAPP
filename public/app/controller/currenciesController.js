@@ -19,7 +19,9 @@ Ext.define('CoinEX.controller.currenciesController', {
     stores: [
         'tradePairs',
         'currencies',
-        'markets'
+        'markets',
+        'sellOrderBook',
+        'buyOrderBook'
     ],
 
     refs: [
@@ -42,10 +44,23 @@ Ext.define('CoinEX.controller.currenciesController', {
 
         this.getTradePairsStore().filter('market_id', record.get('id'));
         this.getComboBox().select(record);
+
     },
 
     onViewItemClick: function(dataview, record, item, index, e, eOpts) {
-        alert('Get data for tradepair: ' + record.get('id'));
+        sellStore = this.getSellOrderBookStore();
+        sellStore.load({
+            params: {
+                tradePair: record.get('id')
+            }
+        });
+
+        buyStore = this.getBuyOrderBookStore();
+        buyStore.load({
+            params: {
+                tradePair: record.get('id')
+            }
+        });
     },
 
     generateMarkets: function(market_ids) {
@@ -75,6 +90,8 @@ Ext.define('CoinEX.controller.currenciesController', {
 
     onTradePairsLoad: function() {
         var me = this, store = me.getTradePairsStore();
+
+        console.log(store);
 
         if (!me.marketsLoaded) {
             me.generateMarkets(store.collect('market_id'));

@@ -32,6 +32,7 @@
                 "defaultWidth": 65,
                 "maxWidth": 65,
                 "minWidth": 65,
+                "style": null,
                 "text": "Currency",
                 "width": 65
             },
@@ -92,7 +93,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "allowBlank": false,
                         "displayField": "name",
+                        "editable": false,
                         "fieldLabel": "Market",
                         "forceSelection": true,
                         "id": "market-select",

@@ -24,6 +24,10 @@ Ext.define('CoinEX.model.currencies', {
 
     fields: [
         {
+            name: 'id',
+            type: 'int'
+        },
+        {
             name: 'name',
             type: 'string'
         },

@@ -18,6 +18,19 @@
             },
             "codeClass": null,
             "userConfig": {
+                "name": "id",
+                "type": "int"
+            },
+            "designerId": "bbd530b8-682f-4566-955e-bb0c28809bf2"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "name",
                 "type": "string"
             },

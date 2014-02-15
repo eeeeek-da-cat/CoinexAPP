@@ -1,0 +1,63 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "buyOrderBook",
+        "model": "orderBook",
+        "storeId": "buyOrderBook"
+    },
+    "designerId": "f6695c30-400b-4b5d-a253-a65ec74c5fa2",
+    "cn": [
+        {
+            "type": "Ext.util.Filter",
+            "reference": {
+                "name": "filters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "filter",
+                "property": null
+            },
+            "designerId": "636cc4fb-6f5e-43c7-b51f-9355bf9b4cf4",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "item"
+                        ],
+                        "fn": "filterFn",
+                        "implHandler": [
+                            "return item.get(\"bid\") === true;"
+                        ]
+                    },
+                    "designerId": "c5aa570a-3443-49ef-aac2-fc2c93b10448"
+                }
+            ]
+        },
+        {
+            "type": "Ext.util.Sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "sorter",
+                "direction": "DESC",
+                "property": "price"
+            },
+            "designerId": "5f0cfd10-ac99-421b-b68f-4c9df5b52e81"
+        }
+    ]
+}

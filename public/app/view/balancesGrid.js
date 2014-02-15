@@ -35,19 +35,19 @@ Ext.define('CoinEX.view.balancesGrid', {
             columns: [
                 {
                     xtype: 'gridcolumn',
+                    align: 'right',
+                    dataIndex: 'balance',
+                    text: 'Balance',
+                    flex: 1
+                },
+                {
+                    xtype: 'gridcolumn',
                     maxWidth: 50,
                     minWidth: 50,
                     width: 50,
                     defaultWidth: 50,
                     dataIndex: 'currency_name',
                     text: 'Coin'
-                },
-                {
-                    xtype: 'gridcolumn',
-                    align: 'right',
-                    dataIndex: 'balance',
-                    text: 'Balance',
-                    flex: 1
                 }
             ],
             viewConfig: {

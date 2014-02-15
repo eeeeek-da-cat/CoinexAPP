@@ -45,10 +45,10 @@ Ext.application({
         'workers',
         'notifications',
         'orders',
-        'orderBook',
-        'markets',
         'tradePairs',
-        'workerStats'
+        'workerStats',
+        'sellOrderBook',
+        'buyOrderBook'
     ],
     views: [
         'viewport',
@@ -75,7 +75,9 @@ Ext.application({
             ],
             me = this,
             createViewPort = function () {
-                Ext.create('widget.viewport');
+                setTimeout(function () {
+                    Ext.create('CoinEX.view.viewport');
+                }, 1000);
             };
 
         Ext.getStore('notifications').on('load', createViewPort, me, {single:true});
@@ -85,6 +87,31 @@ Ext.application({
                 Ext.getStore(value).load();
             }, timeout);
             timeout += 1000;
+        });
+
+        Ext.define('CoinEX.Utilities', {
+            statics: {
+                toSatoshi: function (v) {
+                    var n = Number(v/100000000),
+                        info = /([\d\.]+)e-(\d+)/i.exec(n);
+
+                    if (!info) {
+                        return n;
+                    }
+
+                    var num = info[1].replace('.', ''),
+                        numDecs = info[2] - 1,
+                        output = "0.";
+
+                    for (var i = 0; i < numDecs; i++) {
+                        output += "0";
+                    }
+
+                    output += num;
+
+                    return output;
+                }
+            }
         });
     }
 

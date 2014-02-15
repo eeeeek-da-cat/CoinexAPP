@@ -53,7 +53,7 @@ Ext.define('CoinEX.model.balances', {
         },
         {
             convert: function(v, rec) {
-                return (v/100000000).toString();
+                return CoinEX.Utilities.toSatoshi(v);
             },
             mapping: 'amount',
             name: 'balance',

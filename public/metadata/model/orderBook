@@ -50,6 +50,111 @@
             "designerId": "38bbb293-d536-4dca-b9bd-8020b0a73a02"
         },
         {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": "amount",
+                "name": "coins",
+                "type": "float"
+            },
+            "designerId": "5dec760f-ee03-4f70-851c-9ed106b261d5",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "v",
+                            "rec"
+                        ],
+                        "fn": "convert",
+                        "implHandler": [
+                            "return CoinEX.Utilities.toSatoshi(v);"
+                        ]
+                    },
+                    "designerId": "7c2217dd-3de3-43ca-9607-a1da7ce80207"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": "rate",
+                "name": "price",
+                "type": "float"
+            },
+            "designerId": "5570a0c6-275a-44f7-80f9-7870d4e86258",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "v",
+                            "rec"
+                        ],
+                        "fn": "convert",
+                        "implHandler": [
+                            "return CoinEX.Utilities.toSatoshi(v);"
+                        ]
+                    },
+                    "designerId": "cf9d9b51-4926-43f4-affc-b1a18e1fee9c"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": "amount",
+                "name": "total",
+                "type": "float"
+            },
+            "designerId": "7ed3c5af-153a-45b8-a679-e220ccb1236f",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "v",
+                            "rec"
+                        ],
+                        "fn": "convert",
+                        "implHandler": [
+                            "return CoinEX.Utilities.toSatoshi(rec.get('amount') * rec.get('rate'));"
+                        ]
+                    },
+                    "designerId": "285464d8-b6cd-475e-a820-e90ea48a7105"
+                }
+            ]
+        },
+        {
             "type": "Ext.data.proxy.Ajax",
             "reference": {
                 "name": "proxy",
@@ -58,7 +163,12 @@
             "codeClass": null,
             "userConfig": {
                 "designer|displayName": "proxy",
-                "url": "/api/orders/book?tradePair=46"
+                "extraParams": [
+                    "{",
+                    "    tradePair: 46",
+                    "}"
+                ],
+                "url": "/api/orders/book"
             },
             "designerId": "a2d94b5e-3a79-4bd4-b6c0-742738ffef91",
             "cn": [
