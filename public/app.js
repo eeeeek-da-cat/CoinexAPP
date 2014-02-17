@@ -48,15 +48,17 @@ Ext.application({
         'tradePairs',
         'workerStats',
         'sellOrderBook',
-        'buyOrderBook'
+        'buyOrderBook',
+        'orderBook'
     ],
     views: [
         'viewport',
         'tradesPanel',
-        'ordersPanel',
         'balancesGrid',
         'workersGrid',
-        'chatPanel'
+        'chatPanel',
+        'buyOrdersGrid',
+        'sellOrderGrid'
     ],
     controllers: [
         'chatController',
@@ -92,7 +94,7 @@ Ext.application({
         Ext.define('CoinEX.Utilities', {
             statics: {
                 toSatoshi: function (v) {
-                    var n = Number(v/100000000),
+                    var n = v/100000000,
                         info = /([\d\.]+)e-(\d+)/i.exec(n);
 
                     if (!info) {

@@ -1,0 +1,74 @@
+{
+    "type": "Ext.grid.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "sellorders",
+        "designer|userClassName": "sellOrderGrid",
+        "id": "sellordersgrid",
+        "itemId": "sellordersgrid",
+        "padding": null,
+        "store": "sellOrderBook",
+        "title": "Sell Orders"
+    },
+    "designerId": "8b8da1f4-c6c7-4b1d-85eb-23c889f565ac",
+    "cn": [
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "price",
+                "flex": 1,
+                "text": "Price"
+            },
+            "designerId": "46628be8-7f49-4d2d-8d1a-3cc28f15d0bb"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "coins",
+                "flex": 1,
+                "text": "Amount"
+            },
+            "designerId": "f6960557-bd3f-4bb8-95ab-abe912ec4be2"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "total",
+                "flex": 1,
+                "text": "Total"
+            },
+            "designerId": "d60dddf8-052a-43a4-a194-ccaa7e6f3bb8"
+        },
+        {
+            "type": "Ext.grid.View",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "gridview"
+            },
+            "designerId": "3406e41d-7262-4af3-bcd4-900431a9f890"
+        }
+    ]
+}

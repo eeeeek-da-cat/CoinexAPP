@@ -12,7 +12,8 @@
             "currencies",
             "markets",
             "sellOrderBook",
-            "buyOrderBook"
+            "buyOrderBook",
+            "orderBook"
         ]
     },
     "configAlternates": {
@@ -125,8 +126,6 @@
                 "implHandler": [
                     "var me = this, store = me.getTradePairsStore();",
                     "",
-                    "console.log(store);",
-                    "",
                     "if (!me.marketsLoaded) {",
                     "    me.generateMarkets(store.collect('market_id'));",
                     "}"
@@ -217,15 +216,11 @@
                 "designer|targetType": "Ext.grid.View",
                 "fn": "onViewItemClick",
                 "implHandler": [
-                    "sellStore = this.getSellOrderBookStore();",
-                    "sellStore.load({",
-                    "    params: {",
-                    "        tradePair: record.get('id')",
-                    "    }",
-                    "});",
+                    "Ext.getCmp('sellordersgrid').setLoading(true);",
+                    "Ext.getCmp('buyordersgrid').setLoading(true);",
                     "",
-                    "buyStore = this.getBuyOrderBookStore();",
-                    "buyStore.load({",
+                    "store = this.getOrderBookStore();",
+                    "store.load({",
                     "    params: {",
                     "        tradePair: record.get('id')",
                     "    }",

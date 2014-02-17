@@ -53,7 +53,8 @@ Ext.define('CoinEX.model.orderBook', {
         },
         {
             convert: function(v, rec) {
-                return CoinEX.Utilities.toSatoshi(rec.get('amount') * rec.get('rate'));
+                var total = rec.get('coins') * rec.get('price');
+                return total.toFixed(8);
             },
             mapping: 'amount',
             name: 'total',

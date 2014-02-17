@@ -147,7 +147,8 @@
                         ],
                         "fn": "convert",
                         "implHandler": [
-                            "return CoinEX.Utilities.toSatoshi(rec.get('amount') * rec.get('rate'));"
+                            "var total = rec.get('coins') * rec.get('price');",
+                            "return total.toFixed(8);"
                         ]
                     },
                     "designerId": "285464d8-b6cd-475e-a820-e90ea48a7105"

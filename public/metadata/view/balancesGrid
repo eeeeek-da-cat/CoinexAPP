@@ -10,6 +10,7 @@
         "designer|userClassName": "balancesGrid",
         "disableSelection": true,
         "header": false,
+        "stateful": true,
         "store": "balances",
         "title": "My Balances",
         "width": 250

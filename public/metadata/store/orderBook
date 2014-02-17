@@ -1,0 +1,53 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "orderBook",
+        "model": "orderBook",
+        "storeId": "orderBook"
+    },
+    "designerId": "f43c4c65-01b6-4350-9cb8-3e6689ede791",
+    "cn": [
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onStoreLoad",
+                "implHandler": [
+                    "var sell = Ext.getStore('sellOrderBook'),",
+                    "    buy  = Ext.getStore('buyOrderBook'),",
+                    "    sRecords = [],",
+                    "    bRecords = [];",
+                    "",
+                    "sell.removeAll();",
+                    "buy.removeAll();",
+                    "",
+                    "store.each(function (record) {",
+                    "    if (record.get('bid')) {",
+                    "        bRecords.push(record);",
+                    "    } else {",
+                    "        sRecords.push(record);",
+                    "    }",
+                    "});",
+                    "",
+                    "sell.add(sRecords);",
+                    "buy.add(bRecords);",
+                    "",
+                    "Ext.getCmp('sellordersgrid').setLoading(false);",
+                    "Ext.getCmp('buyordersgrid').setLoading(false);"
+                ],
+                "name": "load",
+                "scope": "me"
+            },
+            "designerId": "d2608c8e-b21f-40a9-a4b3-c15142a90cd8"
+        }
+    ]
+}

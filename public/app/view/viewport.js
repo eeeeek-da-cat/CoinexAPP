@@ -19,7 +19,8 @@ Ext.define('CoinEX.view.viewport', {
     requires: [
         'CoinEX.view.currenciesPanel',
         'CoinEX.view.tradesPanel',
-        'CoinEX.view.ordersPanel',
+        'CoinEX.view.sellOrderGrid',
+        'CoinEX.view.buyOrdersGrid',
         'CoinEX.view.balancesGrid',
         'CoinEX.view.workersGrid',
         'CoinEX.view.chatPanel',
@@ -67,9 +68,23 @@ Ext.define('CoinEX.view.viewport', {
                                     split: true
                                 },
                                 {
-                                    xtype: 'orders',
+                                    xtype: 'container',
                                     flex: 1,
-                                    region: 'center'
+                                    region: 'center',
+                                    layout: 'border',
+                                    items: [
+                                        {
+                                            xtype: 'sellorders',
+                                            flex: 1,
+                                            margin: '0 5px 0 0',
+                                            region: 'west'
+                                        },
+                                        {
+                                            xtype: 'buyorders',
+                                            flex: 1,
+                                            region: 'center'
+                                        }
+                                    ]
                                 }
                             ]
                         }
