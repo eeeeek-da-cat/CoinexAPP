@@ -19,8 +19,9 @@ Ext.define('CoinEX.view.viewport', {
     requires: [
         'CoinEX.view.currenciesPanel',
         'CoinEX.view.tradesPanel',
-        'CoinEX.view.sellOrderGrid',
         'CoinEX.view.buyOrdersGrid',
+        'CoinEX.view.sellOrderGrid',
+        'CoinEX.view.orderHistoryGrid',
         'CoinEX.view.balancesGrid',
         'CoinEX.view.workersGrid',
         'CoinEX.view.chatPanel',
@@ -74,15 +75,22 @@ Ext.define('CoinEX.view.viewport', {
                                     layout: 'border',
                                     items: [
                                         {
-                                            xtype: 'sellorders',
-                                            flex: 1,
+                                            xtype: 'buyorders',
                                             margin: '0 5px 0 0',
+                                            flex: 1,
                                             region: 'west'
                                         },
                                         {
-                                            xtype: 'buyorders',
+                                            xtype: 'sellorders',
+                                            margin: '',
                                             flex: 1,
                                             region: 'center'
+                                        },
+                                        {
+                                            xtype: 'orderhistorygrid',
+                                            flex: 1,
+                                            region: 'east',
+                                            title: 'Order History'
                                         }
                                     ]
                                 }

@@ -198,6 +198,15 @@
             "codeClass": null,
             "userConfig": {
                 "designer|displayName": "proxy",
+                "directionParam": "",
+                "filterParam": "",
+                "groupDirectionParam": "",
+                "groupParam": "",
+                "idParam": "",
+                "limitParam": "",
+                "pageParam": "",
+                "sortParam": "",
+                "startParam": "",
                 "url": "/api/worker_stats"
             },
             "designerId": "f9aedb28-76b6-4a7d-b435-3b5600c3eb0e",

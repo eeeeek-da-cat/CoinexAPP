@@ -80,6 +80,15 @@ Ext.define('CoinEX.model.workerStats', {
 
     proxy: {
         type: 'ajax',
+        directionParam: '',
+        filterParam: '',
+        groupDirectionParam: '',
+        groupParam: '',
+        idParam: '',
+        limitParam: '',
+        pageParam: '',
+        sortParam: '',
+        startParam: '',
         url: '/api/worker_stats',
         reader: {
             type: 'json',

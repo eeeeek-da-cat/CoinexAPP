@@ -145,6 +145,13 @@
             "codeClass": null,
             "userConfig": {
                 "designer|displayName": "proxy",
+                "filterParam": "",
+                "groupParam": "",
+                "idParam": "",
+                "limitParam": "",
+                "pageParam": "",
+                "sortParam": "",
+                "startParam": "",
                 "url": "/api/balances"
             },
             "designerId": "d908a1ff-df26-4991-9575-9d5fd0c91c80",

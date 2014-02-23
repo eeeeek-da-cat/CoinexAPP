@@ -128,10 +128,11 @@ class Coinex_API
         }
 
         $response = $this->handleRequest($http_method, $method);
-        $dec = json_decode($response, true);
-        if (!$dec) {
-            throw new Exception('Invalid data received');
-        }
-        return $dec;
+        return $this->decodeJson($response);
+    }
+    
+    protected function decodeJson($string) {
+        $tmp = json_decode($string, true);
+        return (json_last_error() == JSON_ERROR_NONE) ? $tmp : array();
     }
 }

@@ -47,6 +47,15 @@ Ext.define('CoinEX.model.messages', {
 
     proxy: {
         type: 'ajax',
+        directionParam: '',
+        filterParam: '',
+        groupDirectionParam: '',
+        groupParam: '',
+        idParam: '',
+        limitParam: '',
+        pageParam: '',
+        sortParam: '',
+        startParam: '',
         url: '/api/messages',
         reader: {
             type: 'json',

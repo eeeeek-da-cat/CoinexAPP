@@ -36,7 +36,8 @@ Ext.application({
         'markets',
         'tradePairs',
         'workerStats',
-        'orderBook'
+        'orderBook',
+        'trades'
     ],
     stores: [
         'balances',
@@ -49,7 +50,8 @@ Ext.application({
         'workerStats',
         'sellOrderBook',
         'buyOrderBook',
-        'orderBook'
+        'orderBook',
+        'trades'
     ],
     views: [
         'viewport',
@@ -58,7 +60,8 @@ Ext.application({
         'workersGrid',
         'chatPanel',
         'buyOrdersGrid',
-        'sellOrderGrid'
+        'sellOrderGrid',
+        'orderHistoryGrid'
     ],
     controllers: [
         'chatController',

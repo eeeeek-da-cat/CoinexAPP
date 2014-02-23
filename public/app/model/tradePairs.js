@@ -94,6 +94,15 @@ Ext.define('CoinEX.model.tradePairs', {
 
     proxy: {
         type: 'ajax',
+        directionParam: '',
+        filterParam: '',
+        groupDirectionParam: '',
+        groupParam: '',
+        idParam: '',
+        limitParam: '',
+        pageParam: '',
+        sortParam: '',
+        startParam: '',
         url: '/api/trade_pairs',
         reader: {
             type: 'json',

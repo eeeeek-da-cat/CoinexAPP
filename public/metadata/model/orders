@@ -71,6 +71,15 @@
             "codeClass": null,
             "userConfig": {
                 "designer|displayName": "proxy",
+                "directionParam": "",
+                "filterParam": "",
+                "groupDirectionParam": "",
+                "groupParam": "",
+                "idParam": "",
+                "limitParam": "",
+                "pageParam": "",
+                "sortParam": "",
+                "startParam": "",
                 "url": "/api/orders"
             },
             "designerId": "85f594fc-d3d0-4a8f-a3c7-191048876b9f",

@@ -1,0 +1,30 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "trades",
+        "model": "trades",
+        "storeId": "trades"
+    },
+    "designerId": "b0df970f-4578-4774-9856-4e68493aaf87",
+    "cn": [
+        {
+            "type": "Ext.util.Sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "sorter",
+                "direction": "DESC",
+                "property": "created_at"
+            },
+            "designerId": "a6272119-61ee-44ab-8e9d-54a8b8932c8b"
+        }
+    ]
+}

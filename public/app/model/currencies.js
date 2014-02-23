@@ -111,6 +111,15 @@ Ext.define('CoinEX.model.currencies', {
 
     proxy: {
         type: 'ajax',
+        directionParam: '',
+        filterParam: '',
+        groupDirectionParam: '',
+        groupParam: '',
+        idParam: '',
+        limitParam: '',
+        pageParam: '',
+        sortParam: '',
+        startParam: '',
         url: '/api/currencies',
         reader: {
             type: 'json',

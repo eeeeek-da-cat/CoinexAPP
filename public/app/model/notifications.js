@@ -51,6 +51,15 @@ Ext.define('CoinEX.model.notifications', {
 
     proxy: {
         type: 'ajax',
+        directionParam: '',
+        filterParam: '',
+        groupDirectionParam: '',
+        groupParam: '',
+        idParam: '',
+        limitParam: '',
+        pageParam: '',
+        sortParam: '',
+        startParam: '',
         url: '/api/notifications',
         reader: {
             type: 'json',

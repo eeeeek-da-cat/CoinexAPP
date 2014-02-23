@@ -6,30 +6,32 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userAlias": "buyorders",
-        "designer|userClassName": "buyOrdersGrid",
-        "id": "buyordersgrid",
-        "itemId": "buyordersgrid",
-        "padding": null,
-        "store": "buyOrderBook",
-        "title": "Buy Orders",
+        "collapsible": true,
+        "designer|userAlias": "orderhistorygrid",
+        "designer|userClassName": "orderHistoryGrid",
+        "id": "orderhistorygrid",
+        "itemId": "orderhistorygrid",
+        "margin": "0 0 0 5px",
+        "store": "trades",
+        "title": "History",
         "width": null
     },
-    "designerId": "c9f13eb0-d03d-45be-a2f2-b359cd445c5a",
+    "designerId": "64469530-7baa-47c9-9b54-bcfecf6b76de",
     "cn": [
         {
-            "type": "Ext.grid.column.Column",
+            "type": "Ext.grid.column.Date",
             "reference": {
                 "name": "columns",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "dataIndex": "price",
-                "flex": 1,
-                "text": "Price"
+                "dataIndex": "created_at",
+                "format": "m-d H:i:s",
+                "hidden": true,
+                "text": "Time"
             },
-            "designerId": "209eecd8-0e8e-4369-920c-95f81d75e715"
+            "designerId": "37559ef1-4920-49d7-a02e-bdd1ab9c9ec6"
         },
         {
             "type": "Ext.grid.column.Column",
@@ -39,11 +41,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dataIndex": "coins",
+                "dataIndex": "num",
                 "flex": 1,
                 "text": "Amount"
             },
-            "designerId": "775f6969-5130-4638-aeb6-ab2f76b4ed43"
+            "designerId": "c06d555b-4ccc-4a8e-a23d-33cd5937462d"
         },
         {
             "type": "Ext.grid.column.Column",
@@ -53,11 +55,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dataIndex": "total",
-                "flex": 1,
-                "text": "Total"
+                "dataIndex": "rating",
+                "text": "Rate"
             },
-            "designerId": "da68aa15-7baa-40bb-8947-e5a129a29f2d"
+            "designerId": "cfde0a97-8f9f-44ee-8a95-ae750c16017d"
         },
         {
             "type": "Ext.grid.View",
@@ -69,7 +70,7 @@
             "userConfig": {
                 "designer|displayName": "gridview"
             },
-            "designerId": "2d3f1b4c-25e0-4567-8ed4-7337aeb8699a",
+            "designerId": "da038c14-0b75-4705-b26c-dac73b324905",
             "cn": [
                 {
                     "type": "fixedfunction",
@@ -94,7 +95,7 @@
                             "}"
                         ]
                     },
-                    "designerId": "2bb34942-55db-42d0-b3fc-d30438885b83"
+                    "designerId": "8d3c8f14-d60f-4b05-b64f-6551e5c72471"
                 }
             ]
         }

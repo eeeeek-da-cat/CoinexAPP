@@ -126,6 +126,21 @@
                                         "layout|region": "west",
                                         "margin": "0 5px 0 0"
                                     },
+                                    "designerId": "75451dd6-3496-400e-a697-ed6e79258df8",
+                                    "masterInstanceId": "c9f13eb0-d03d-45be-a2f2-b359cd445c5a"
+                                },
+                                {
+                                    "type": "linkedinstance",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": 1,
+                                        "layout|region": "center",
+                                        "margin": ""
+                                    },
                                     "designerId": "40a61f3c-333b-470a-82b0-e36b61fb6d84",
                                     "masterInstanceId": "8b8da1f4-c6c7-4b1d-85eb-23c889f565ac"
                                 },
@@ -137,11 +152,13 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "designer|displayName": "orderhistorygrid",
                                         "layout|flex": 1,
-                                        "layout|region": "center"
+                                        "layout|region": "east",
+                                        "title": "Order History"
                                     },
-                                    "designerId": "75451dd6-3496-400e-a697-ed6e79258df8",
-                                    "masterInstanceId": "c9f13eb0-d03d-45be-a2f2-b359cd445c5a"
+                                    "designerId": "9d02c001-580f-4d40-aedc-2e6e5f2fe69f",
+                                    "masterInstanceId": "64469530-7baa-47c9-9b54-bcfecf6b76de"
                                 }
                             ]
                         }

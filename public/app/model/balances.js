@@ -63,6 +63,13 @@ Ext.define('CoinEX.model.balances', {
 
     proxy: {
         type: 'ajax',
+        filterParam: '',
+        groupParam: '',
+        idParam: '',
+        limitParam: '',
+        pageParam: '',
+        sortParam: '',
+        startParam: '',
         url: '/api/balances',
         reader: {
             type: 'json',

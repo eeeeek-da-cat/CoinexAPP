@@ -35,6 +35,14 @@
     font-size:14px;
 }
 
+.buy .x-grid-td {
+    background-color:#dfd !important;
+}
+
+.sell .x-grid-td {
+    background-color:#fdd !important;
+}
+
 html {
     background-color:#e0e0e0;
     background-image:url('/images/coinex_loading.png');

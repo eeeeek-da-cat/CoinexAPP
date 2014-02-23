@@ -84,6 +84,15 @@
             "codeClass": null,
             "userConfig": {
                 "designer|displayName": "proxy",
+                "directionParam": "",
+                "filterParam": "",
+                "groupDirectionParam": "",
+                "groupParam": "",
+                "idParam": "",
+                "limitParam": "",
+                "pageParam": "",
+                "sortParam": "",
+                "startParam": "",
                 "url": "/api/messages"
             },
             "designerId": "bd32b6dc-288b-4bee-add9-56a73c4379f8",

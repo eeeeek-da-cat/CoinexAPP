@@ -21,7 +21,8 @@
             "markets",
             "tradePairs",
             "workerStats",
-            "orderBook"
+            "orderBook",
+            "trades"
         ],
         "name": "CoinEX",
         "requires": [
@@ -40,7 +41,8 @@
             "workerStats",
             "sellOrderBook",
             "buyOrderBook",
-            "orderBook"
+            "orderBook",
+            "trades"
         ],
         "views": [
             "viewport",
@@ -49,7 +51,8 @@
             "workersGrid",
             "chatPanel",
             "buyOrdersGrid",
-            "sellOrderGrid"
+            "sellOrderGrid",
+            "orderHistoryGrid"
         ]
     },
     "designerId": "application",

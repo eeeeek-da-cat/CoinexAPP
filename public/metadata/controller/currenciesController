@@ -13,7 +13,8 @@
             "markets",
             "sellOrderBook",
             "buyOrderBook",
-            "orderBook"
+            "orderBook",
+            "trades"
         ]
     },
     "configAlternates": {
@@ -216,14 +217,21 @@
                 "designer|targetType": "Ext.grid.View",
                 "fn": "onViewItemClick",
                 "implHandler": [
+                    "var stores = [",
+                    "        this.getOrderBookStore(),",
+                    "        this.getTradesStore()",
+                    "    ], ",
+                    "    params = {",
+                    "        tradePair: record.get('id')",
+                    "    };",
+                    "",
                     "Ext.getCmp('sellordersgrid').setLoading(true);",
                     "Ext.getCmp('buyordersgrid').setLoading(true);",
                     "",
-                    "store = this.getOrderBookStore();",
-                    "store.load({",
-                    "    params: {",
-                    "        tradePair: record.get('id')",
-                    "    }",
+                    "Ext.each(stores, function (store) {",
+                    "    store.load({",
+                    "        params: params",
+                    "    });",
                     "});"
                 ],
                 "name": "itemclick",

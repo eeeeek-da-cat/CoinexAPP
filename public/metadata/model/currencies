@@ -292,6 +292,15 @@
             "codeClass": null,
             "userConfig": {
                 "designer|displayName": "proxy",
+                "directionParam": "",
+                "filterParam": "",
+                "groupDirectionParam": "",
+                "groupParam": "",
+                "idParam": "",
+                "limitParam": "",
+                "pageParam": "",
+                "sortParam": "",
+                "startParam": "",
                 "url": "/api/currencies"
             },
             "designerId": "962d21cd-bbc5-44b9-8cb4-2f118cf7f2da",

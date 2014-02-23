@@ -250,6 +250,15 @@
             "codeClass": null,
             "userConfig": {
                 "designer|displayName": "proxy",
+                "directionParam": "",
+                "filterParam": "",
+                "groupDirectionParam": "",
+                "groupParam": "",
+                "idParam": "",
+                "limitParam": "",
+                "pageParam": "",
+                "sortParam": "",
+                "startParam": "",
                 "url": "/api/trade_pairs"
             },
             "designerId": "110cd50a-8271-43cb-9baa-450409a0b6e6",

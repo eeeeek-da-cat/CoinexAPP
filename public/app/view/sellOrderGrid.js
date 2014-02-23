@@ -50,7 +50,16 @@ Ext.define('CoinEX.view.sellOrderGrid', {
                     text: 'Total',
                     flex: 1
                 }
-            ]
+            ],
+            viewConfig: {
+                getRowClass: function(record, rowIndex, rowParams, store) {
+                    if (record.get('bid')) {
+                        return 'buy';
+                    } else {
+                        return 'sell';
+                    }
+                }
+            }
         });
 
         me.callParent(arguments);

@@ -22,7 +22,8 @@ Ext.define('CoinEX.controller.currenciesController', {
         'markets',
         'sellOrderBook',
         'buyOrderBook',
-        'orderBook'
+        'orderBook',
+        'trades'
     ],
 
     refs: [
@@ -49,14 +50,21 @@ Ext.define('CoinEX.controller.currenciesController', {
     },
 
     onViewItemClick: function(dataview, record, item, index, e, eOpts) {
+        var stores = [
+                this.getOrderBookStore(),
+                this.getTradesStore()
+            ],
+            params = {
+                tradePair: record.get('id')
+            };
+
         Ext.getCmp('sellordersgrid').setLoading(true);
         Ext.getCmp('buyordersgrid').setLoading(true);
 
-        store = this.getOrderBookStore();
-        store.load({
-            params: {
-                tradePair: record.get('id')
-            }
+        Ext.each(stores, function (store) {
+            store.load({
+                params: params
+            });
         });
     },
 

@@ -6,9 +6,9 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "orderBook"
+        "designer|userClassName": "trades"
     },
-    "designerId": "f130d4cc-719d-41bc-a01d-7a253fa96b8f",
+    "designerId": "a7201185-a581-406c-8007-0986d038da8f",
     "cn": [
         {
             "type": "Ext.data.Field",
@@ -18,10 +18,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "rate",
+                "name": "id",
                 "type": "int"
             },
-            "designerId": "98d6e849-db6b-4a97-916e-6cad026d3dfb"
+            "designerId": "b643bbf8-6ca3-4ce0-9b58-910d40c32274"
         },
         {
             "type": "Ext.data.Field",
@@ -31,10 +31,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "amount",
+                "name": "ask_user_id",
                 "type": "int"
             },
-            "designerId": "90633848-5780-452f-9a06-9e86b4537328"
+            "designerId": "6cd215c6-79dc-4de9-a475-5cfbe0063b41"
         },
         {
             "type": "Ext.data.Field",
@@ -47,7 +47,7 @@
                 "name": "bid",
                 "type": "boolean"
             },
-            "designerId": "38bbb293-d536-4dca-b9bd-8020b0a73a02"
+            "designerId": "4bc2461e-0bd3-4daf-a836-1fe1f1c94d0b"
         },
         {
             "type": "Ext.data.Field",
@@ -57,32 +57,63 @@
             },
             "codeClass": null,
             "userConfig": {
-                "mapping": "amount",
-                "name": "coins",
-                "type": "float"
+                "name": "bid_user_id",
+                "type": "int"
             },
-            "designerId": "5dec760f-ee03-4f70-851c-9ed106b261d5",
-            "cn": [
-                {
-                    "type": "fixedfunction",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|params": [
-                            "v",
-                            "rec"
-                        ],
-                        "fn": "convert",
-                        "implHandler": [
-                            "return CoinEX.Utilities.toSatoshi(v);"
-                        ]
-                    },
-                    "designerId": "7c2217dd-3de3-43ca-9607-a1da7ce80207"
-                }
-            ]
+            "designerId": "bcdc3ba7-fca9-4e74-bd04-aa8e740a2df6"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": null,
+                "name": "amount",
+                "type": "int"
+            },
+            "designerId": "9a3a6b63-a9d5-49d5-b678-91171ec83089"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "created_at",
+                "type": "date"
+            },
+            "designerId": "097a2e05-f6a1-4f1c-87e2-6a7b9cb840b2"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "rate",
+                "type": "int"
+            },
+            "designerId": "bd20f86e-3849-40f1-b0b6-7f3c81a777d2"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "trade_pair_id",
+                "type": "int"
+            },
+            "designerId": "f77933ef-ef4a-4299-bf4f-fdb66242dd4a"
         },
         {
             "type": "Ext.data.Field",
@@ -93,10 +124,10 @@
             "codeClass": null,
             "userConfig": {
                 "mapping": "rate",
-                "name": "price",
+                "name": "rating",
                 "type": "float"
             },
-            "designerId": "5570a0c6-275a-44f7-80f9-7870d4e86258",
+            "designerId": "7bdb522a-8f88-42af-b747-ad4f572893cc",
             "cn": [
                 {
                     "type": "fixedfunction",
@@ -115,7 +146,7 @@
                             "return CoinEX.Utilities.toSatoshi(v);"
                         ]
                     },
-                    "designerId": "cf9d9b51-4926-43f4-affc-b1a18e1fee9c"
+                    "designerId": "e92a61fe-746b-4fdf-9605-cea30c94c8b8"
                 }
             ]
         },
@@ -128,10 +159,10 @@
             "codeClass": null,
             "userConfig": {
                 "mapping": "amount",
-                "name": "total",
+                "name": "num",
                 "type": "float"
             },
-            "designerId": "7ed3c5af-153a-45b8-a679-e220ccb1236f",
+            "designerId": "6b4167be-f545-46e2-affa-35c2f569543c",
             "cn": [
                 {
                     "type": "fixedfunction",
@@ -147,11 +178,10 @@
                         ],
                         "fn": "convert",
                         "implHandler": [
-                            "var total = rec.get('coins') * rec.get('price');",
-                            "return total.toFixed(8);"
+                            "return CoinEX.Utilities.toSatoshi(v);"
                         ]
                     },
-                    "designerId": "285464d8-b6cd-475e-a820-e90ea48a7105"
+                    "designerId": "937279ae-7375-427f-a34b-1969a925e846"
                 }
             ]
         },
@@ -164,23 +194,12 @@
             "codeClass": null,
             "userConfig": {
                 "designer|displayName": "proxy",
-                "directionParam": "",
                 "extraParams": [
-                    "{",
-                    "    tradePair: 46",
-                    "}"
+                    "{tradePair:46}"
                 ],
-                "filterParam": "",
-                "groupDirectionParam": "",
-                "groupParam": "",
-                "idParam": "",
-                "limitParam": "",
-                "pageParam": "",
-                "sortParam": "",
-                "startParam": "",
-                "url": "/api/orders/book"
+                "url": "/api/trades"
             },
-            "designerId": "a2d94b5e-3a79-4bd4-b6c0-742738ffef91",
+            "designerId": "4a3c53f0-211d-4244-9554-5d515e55b6aa",
             "cn": [
                 {
                     "type": "Ext.data.reader.Json",
@@ -191,9 +210,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "designer|displayName": "reader",
-                        "root": "order_book"
+                        "root": "trades"
                     },
-                    "designerId": "d952e5b1-7609-4c7a-a006-468b774a77f9"
+                    "designerId": "8d8ad841-e8d8-47ce-a4ed-36768e212879"
                 }
             ]
         }

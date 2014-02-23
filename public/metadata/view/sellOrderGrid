@@ -68,7 +68,34 @@
             "userConfig": {
                 "designer|displayName": "gridview"
             },
-            "designerId": "3406e41d-7262-4af3-bcd4-900431a9f890"
+            "designerId": "3406e41d-7262-4af3-bcd4-900431a9f890",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "record",
+                            "rowIndex",
+                            "rowParams",
+                            "store"
+                        ],
+                        "fn": "getRowClass",
+                        "implHandler": [
+                            "if (record.get('bid')) {",
+                            "    return 'buy';",
+                            "} else {",
+                            "    return 'sell';",
+                            "}"
+                        ]
+                    },
+                    "designerId": "e4932fb6-1af8-455e-ace3-2e77ca5473e7"
+                }
+            ]
         }
     ]
 }
