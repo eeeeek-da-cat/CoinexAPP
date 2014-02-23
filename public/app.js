@@ -15,16 +15,23 @@
 
 // @require @packageOverrides
 Ext.Loader.setConfig({
-    enabled: true
+    enabled: true,
+    paths: {
+        Ext: '.',
+        Chart: 'Chart'
+    }
 });
 
 
 Ext.application({
 
     requires: [
+        'Ext.Loader',
         'CoinEX.model.tradePairs',
         'CoinEX.model.currencies',
-        'CoinEX.model.markets'
+        'CoinEX.model.markets',
+        'Chart.ux.HighStock',
+        'Chart.ux.HighStockSerie'
     ],
     models: [
         'balances',
@@ -51,11 +58,11 @@ Ext.application({
         'sellOrderBook',
         'buyOrderBook',
         'orderBook',
-        'trades'
+        'trades',
+        'chartItems'
     ],
     views: [
         'viewport',
-        'tradesPanel',
         'balancesGrid',
         'workersGrid',
         'chatPanel',
@@ -66,7 +73,8 @@ Ext.application({
     controllers: [
         'chatController',
         'balancesController',
-        'currenciesController'
+        'currenciesController',
+        'chartController'
     ],
     name: 'CoinEX',
 

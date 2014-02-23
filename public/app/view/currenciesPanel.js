@@ -25,6 +25,8 @@ Ext.define('CoinEX.view.currenciesPanel', {
         'CoinEX.model.currencies'
     ],
 
+    id: 'currenciesgrid',
+    itemId: 'currenciesgrid',
     maxWidth: 200,
     minWidth: 200,
     width: 200,

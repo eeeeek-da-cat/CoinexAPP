@@ -6,8 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "js",
-        "url": "Chart/ux/HighStock.compiled.js"
+        "designer|userClassName": "js1",
+        "url": "/highstock.js"
     },
-    "designerId": "77426852-707a-4fed-a86d-c8ac522ad4c4"
+    "designerId": "26f44c99-ca09-40cc-9a2d-25801c106efc"
 }

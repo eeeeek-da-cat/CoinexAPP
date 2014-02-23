@@ -18,7 +18,6 @@ Ext.define('CoinEX.view.viewport', {
 
     requires: [
         'CoinEX.view.currenciesPanel',
-        'CoinEX.view.tradesPanel',
         'CoinEX.view.buyOrdersGrid',
         'CoinEX.view.sellOrderGrid',
         'CoinEX.view.orderHistoryGrid',
@@ -64,9 +63,107 @@ Ext.define('CoinEX.view.viewport', {
                             layout: 'border',
                             items: [
                                 {
-                                    xtype: 'trades',
+                                    xtype: 'container',
                                     region: 'north',
-                                    split: true
+                                    split: true,
+                                    height: 350,
+                                    maxHeight: 350,
+                                    minHeight: 350,
+                                    layout: {
+                                        type: 'hbox',
+                                        align: 'stretch'
+                                    },
+                                    items: [
+                                        {
+                                            xtype: 'panel',
+                                            flex: 1,
+                                            items: [
+                                                {
+                                                    xtype: 'highstock',
+                                                    id: 'stockchart',
+                                                    height: 500,
+                                                    width: 700,
+                                                    store: Ext.getStore('chartItems'),
+                                                    series: [
+                                                        {
+                                                            plot: 'candlestick',
+                                                            name: 'Trades',
+                                                            getData: function(record) {
+                                                                    return [
+                                                                            record.data.time,
+                                                                            record.data.open,
+                                                                            record.data.high,
+                                                                            record.data.low,
+                                                                            record.data.close
+                                                                           ];
+                                                                },
+                                                            dataGrouping: {
+                                                                // unit name, allowed multiples
+                                                                units: [
+                                                                    [
+                                                                        'week',
+                                                                        [
+                                                                            1
+                                                                        ]
+                                                                    ],
+                                                                    [
+                                                                        'month',
+                                                                        [
+                                                                            1,
+                                                                            2,
+                                                                            3,
+                                                                            4,
+                                                                            6
+                                                                        ]
+                                                                    ]
+                                                                ]
+                                                            }
+                                                        },
+                                                        {
+                                                            plot: 'column',
+                                                            name: 'Volume',
+                                                            getData: function(record) {
+                                                                    return [record.data.time, record.data.volume];
+                                                                },
+                                                            yAxis: 1,
+                                                            dataGrouping: {
+                                                                units: [
+                                                                    [
+                                                                        'week',
+                                                                        [
+                                                                            1
+                                                                        ]
+                                                                    ],
+                                                                    [
+                                                                        'month',
+                                                                        [
+                                                                            1,
+                                                                            2,
+                                                                            3,
+                                                                            4,
+                                                                            6
+                                                                        ]
+                                                                    ]
+                                                                ]
+                                                            }
+                                                        }
+                                                    ],
+                                                    chartConfig: {
+                                                        chart: {
+                                                            
+                                                        },
+                                                        rangeSelector: {
+                                                            selected: 1
+                                                        },
+                                                        title: {
+                                                            text: 'Trades'
+                                                        }
+                                                    }
+                                                }
+                                            ],
+                                            title: 'My Panel'
+                                        }
+                                    ]
                                 },
                                 {
                                     xtype: 'container',

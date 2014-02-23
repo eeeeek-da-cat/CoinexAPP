@@ -29,9 +29,8 @@
     "viewOrderMap": {
         "view": [
             "570ee77a-0bfc-47b0-bb1b-7772ff3b7215",
-            "79552c93-b4b5-47a0-89e4-cbf47ce039e7",
-            "e079fd32-896e-49f4-b2d1-3c1bfe6aa5c9",
             "2f9479db-6b03-49dc-a27d-df9c00814ac0",
+            "79552c93-b4b5-47a0-89e4-cbf47ce039e7",
             "76194a36-6f24-433a-9181-b84db90bde8a",
             "d4893373-0b53-413d-9f24-a1412cab2476",
             "c9f13eb0-d03d-45be-a2f2-b359cd445c5a",
@@ -51,12 +50,14 @@
             "958a5477-8ebd-47f1-9aa9-c1e367810a10",
             "b0df970f-4578-4774-9856-4e68493aaf87",
             "ba350ec6-cd3a-4423-bd92-221234c44c4e",
+            "7c4097b7-bd15-487e-8cb1-c484e9f96344",
             "564630fd-001c-4d45-83a8-1ed7d3134c55"
         ],
         "controller": [
             "828047a2-5d16-4b1c-8f0e-37ced79c53aa",
             "24370b47-7067-48fb-99fd-905ffcff3e90",
-            "e0b659ee-1f0d-47ba-829c-a318fd379ddc"
+            "e0b659ee-1f0d-47ba-829c-a318fd379ddc",
+            "aa5075ff-077a-4702-a3ff-5abac99a8a92"
         ],
         "model": [
             "617a731b-13e7-4138-82bd-86ca815211cf",
@@ -74,7 +75,8 @@
         "resource": [
             "76d17007-2335-4c00-b7ab-dad9b996582b",
             "a1b8d322-59ce-44cb-9641-1ba0ee687644",
-            "77426852-707a-4fed-a86d-c8ac522ad4c4"
+            "22cc144c-c07e-49da-906d-c2cb6c78f78e",
+            "26f44c99-ca09-40cc-9a2d-25801c106efc"
         ],
         "app": [
             "application"

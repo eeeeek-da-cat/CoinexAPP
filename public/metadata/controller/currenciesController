@@ -14,7 +14,8 @@
             "sellOrderBook",
             "buyOrderBook",
             "orderBook",
-            "trades"
+            "trades",
+            "chartItems"
         ]
     },
     "configAlternates": {
@@ -64,6 +65,19 @@
                 "scope": "me"
             },
             "designerId": "6a499cb5-559d-4d4c-9f4e-72c44bd1ad38"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "currenciesGrid",
+                "selector": "#currenciesgrid"
+            },
+            "designerId": "dfeee68a-a9dc-4355-b9f5-b130021946e9"
         },
         {
             "type": "basicfunction",
@@ -220,7 +234,7 @@
                     "var stores = [",
                     "        this.getOrderBookStore(),",
                     "        this.getTradesStore()",
-                    "    ], ",
+                    "    ],",
                     "    params = {",
                     "        tradePair: record.get('id')",
                     "    };",
@@ -232,7 +246,13 @@
                     "    store.load({",
                     "        params: params",
                     "    });",
-                    "});"
+                    "});",
+                    "",
+                    "",
+                    "var chartItemsStore = this.getChartItemsStore();",
+                    "",
+                    "chartItemsStore.getProxy().url = \"/api/trade_pairs/\" + record.get('id') + \"/chart_items\";",
+                    "chartItemsStore.load();"
                 ],
                 "name": "itemclick",
                 "scope": "me"

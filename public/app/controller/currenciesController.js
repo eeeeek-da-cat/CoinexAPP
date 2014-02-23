@@ -23,13 +23,18 @@ Ext.define('CoinEX.controller.currenciesController', {
         'sellOrderBook',
         'buyOrderBook',
         'orderBook',
-        'trades'
+        'trades',
+        'chartItems'
     ],
 
     refs: [
         {
             ref: 'comboBox',
             selector: 'combobox#market-select'
+        },
+        {
+            ref: 'currenciesGrid',
+            selector: '#currenciesgrid'
         }
     ],
 
@@ -66,6 +71,12 @@ Ext.define('CoinEX.controller.currenciesController', {
                 params: params
             });
         });
+
+
+        var chartItemsStore = this.getChartItemsStore();
+
+        chartItemsStore.getProxy().url = "/api/trade_pairs/" + record.get('id') + "/chart_items";
+        chartItemsStore.load();
     },
 
     generateMarkets: function(market_ids) {

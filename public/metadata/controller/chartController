@@ -1,0 +1,12 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "chartController"
+    },
+    "designerId": "aa5075ff-077a-4702-a3ff-5abac99a8a92"
+}

@@ -9,7 +9,8 @@
         "controllers": [
             "chatController",
             "balancesController",
-            "currenciesController"
+            "currenciesController",
+            "chartController"
         ],
         "models": [
             "balances",
@@ -28,7 +29,9 @@
         "requires": [
             "CoinEX.model.tradePairs",
             "CoinEX.model.currencies",
-            "CoinEX.model.markets"
+            "CoinEX.model.markets",
+            "Chart.ux.HighStock",
+            "Chart.ux.HighStockSerie"
         ],
         "stores": [
             "balances",
@@ -42,11 +45,11 @@
             "sellOrderBook",
             "buyOrderBook",
             "orderBook",
-            "trades"
+            "trades",
+            "chartItems"
         ],
         "views": [
             "viewport",
-            "tradesPanel",
             "balancesGrid",
             "workersGrid",
             "chatPanel",
@@ -117,6 +120,25 @@
                 ]
             },
             "designerId": "14c1d48e-eaae-4b9b-bcbd-135f9a0060d7"
+        },
+        {
+            "type": "Ext.Loader",
+            "reference": {
+                "name": "loader",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "loader",
+                "enabled": true,
+                "paths": [
+                    "{",
+                    "    \"Ext\":\".\",",
+                    "    \"Chart\":\"Chart\"",
+                    "}"
+                ]
+            },
+            "designerId": "cf2a4b05-9276-4d04-8741-41f8b7e9bda9"
         }
     ]
 }

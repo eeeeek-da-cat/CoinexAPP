@@ -86,18 +86,94 @@
                     "designerId": "c105332c-28e5-47fc-a61c-91233b06ace7",
                     "cn": [
                         {
-                            "type": "linkedinstance",
+                            "type": "Ext.container.Container",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "container|align": "stretch",
+                                "designer|displayName": "graphContainer",
+                                "height": 350,
+                                "layout": "hbox",
                                 "layout|region": "north",
-                                "layout|split": true
+                                "layout|split": true,
+                                "maxHeight": 350,
+                                "minHeight": 350
                             },
-                            "designerId": "efe8f29e-094a-4004-a4c8-c8d64acef384",
-                            "masterInstanceId": "e079fd32-896e-49f4-b2d1-3c1bfe6aa5c9"
+                            "designerId": "1cef6371-3717-4739-a3ea-878a3c66ace2",
+                            "cn": [
+                                {
+                                    "type": "Ext.panel.Panel",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "items": [
+                                            "[{",
+                                            "    xtype : 'highstock',",
+                                            "    id: 'stockchart',",
+                                            "    height : 500,",
+                                            "    width : 700,",
+                                            "    store : Ext.getStore('chartItems'),",
+                                            "    series : [{",
+                                            "        plot : 'candlestick',",
+                                            "        name : 'Trades',",
+                                            "        getData : function(record) {",
+                                            "            return [",
+                                            "                    record.data.time,",
+                                            "                    record.data.open,",
+                                            "                    record.data.high,",
+                                            "                    record.data.low,",
+                                            "                    record.data.close",
+                                            "                   ];",
+                                            "        },",
+                                            "        dataGrouping : {",
+                                            "            // unit name, allowed multiples",
+                                            "            units : [['week', [1]], ['month', [1, 2, 3, 4, 6]]]",
+                                            "        }",
+                                            "    }, {",
+                                            "        plot : 'column',",
+                                            "        name : 'Volume',",
+                                            "        getData : function(record) {",
+                                            "            return [record.data.time, record.data.volume];",
+                                            "        },",
+                                            "        yAxis : 1,",
+                                            "        dataGrouping : {",
+                                            "            units : [['week', [1]], ['month', [1, 2, 3, 4, 6]]]",
+                                            "        }",
+                                            "    }],",
+                                            "    chartConfig : {",
+                                            "      chart : {",
+                                            "      },",
+                                            "      rangeSelector : {",
+                                            "        selected : 1",
+                                            "      },",
+                                            "      title : {",
+                                            "        text : 'Trades'",
+                                            "      }",
+                                            "    }",
+                                            "}]"
+                                        ],
+                                        "layout|flex": 1,
+                                        "title": "My Panel"
+                                    },
+                                    "configAlternates": {
+                                        "items": "object"
+                                    },
+                                    "designerId": "c67825ae-a579-4a86-a6c4-77cc9482f64f",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "items",
+                                            "type": "string"
+                                        }
+                                    ]
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.container.Container",
