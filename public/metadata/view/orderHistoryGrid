@@ -14,7 +14,7 @@
         "itemId": "orderhistorygrid",
         "margin": "0 0 0 5px",
         "store": "trades",
-        "title": "History",
+        "title": "Trades",
         "width": null
     },
     "designerId": "64469530-7baa-47c9-9b54-bcfecf6b76de",
@@ -89,34 +89,7 @@
             "userConfig": {
                 "designer|displayName": "gridview"
             },
-            "designerId": "da038c14-0b75-4705-b26c-dac73b324905",
-            "cn": [
-                {
-                    "type": "fixedfunction",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|params": [
-                            "record",
-                            "rowIndex",
-                            "rowParams",
-                            "store"
-                        ],
-                        "fn": "getRowClass",
-                        "implHandler": [
-                            "if (record.get('bid')) {",
-                            "    return 'buy';",
-                            "} else {",
-                            "    return 'sell';",
-                            "}"
-                        ]
-                    },
-                    "designerId": "8d3c8f14-d60f-4b05-b64f-6551e5c72471"
-                }
-            ]
+            "designerId": "da038c14-0b75-4705-b26c-dac73b324905"
         }
     ]
 }

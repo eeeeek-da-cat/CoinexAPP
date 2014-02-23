@@ -186,8 +186,7 @@ Ext.define('CoinEX.view.viewport', {
                                         {
                                             xtype: 'orderhistorygrid',
                                             flex: 1,
-                                            region: 'east',
-                                            title: 'Order History'
+                                            region: 'east'
                                         }
                                     ]
                                 }

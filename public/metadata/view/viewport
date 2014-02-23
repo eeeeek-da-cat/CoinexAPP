@@ -231,7 +231,7 @@
                                         "designer|displayName": "orderhistorygrid",
                                         "layout|flex": 1,
                                         "layout|region": "east",
-                                        "title": "Order History"
+                                        "title": null
                                     },
                                     "designerId": "9d02c001-580f-4d40-aedc-2e6e5f2fe69f",
                                     "masterInstanceId": "64469530-7baa-47c9-9b54-bcfecf6b76de"

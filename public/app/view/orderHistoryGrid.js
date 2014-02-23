@@ -26,7 +26,7 @@ Ext.define('CoinEX.view.orderHistoryGrid', {
     itemId: 'orderhistorygrid',
     margin: '0 0 0 5px',
     collapsible: true,
-    title: 'History',
+    title: 'Trades',
     disableSelection: true,
     store: 'trades',
 
@@ -63,16 +63,7 @@ Ext.define('CoinEX.view.orderHistoryGrid', {
                     text: 'Total',
                     flex: 1
                 }
-            ],
-            viewConfig: {
-                getRowClass: function(record, rowIndex, rowParams, store) {
-                    if (record.get('bid')) {
-                        return 'buy';
-                    } else {
-                        return 'sell';
-                    }
-                }
-            }
+            ]
         });
 
         me.callParent(arguments);
