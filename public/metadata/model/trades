@@ -215,6 +215,42 @@
                     "designerId": "8d8ad841-e8d8-47ce-a4ed-36768e212879"
                 }
             ]
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": "amount",
+                "name": "total",
+                "type": "float"
+            },
+            "designerId": "3b0d8a3b-e202-4882-89c2-73efbbc20521",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "v",
+                            "rec"
+                        ],
+                        "fn": "convert",
+                        "implHandler": [
+                            "var total = rec.get('rating') * rec.get('num');",
+                            "return total.toFixed(8);"
+                        ]
+                    },
+                    "designerId": "8420fc0a-ac22-4ff4-b594-e39e537412fa"
+                }
+            ]
         }
     ]
 }

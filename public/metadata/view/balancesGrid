@@ -8,7 +8,6 @@
     "userConfig": {
         "designer|userAlias": "balances",
         "designer|userClassName": "balancesGrid",
-        "disableSelection": true,
         "header": false,
         "stateful": true,
         "store": "balances",
@@ -61,7 +60,9 @@
             },
             "codeClass": null,
             "userConfig": {
+                "autoScroll": null,
                 "designer|displayName": "gridview",
+                "disableSelection": true,
                 "loadMask": false,
                 "preserveScrollOnRefresh": true
             },

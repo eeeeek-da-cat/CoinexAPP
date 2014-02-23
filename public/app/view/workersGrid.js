@@ -22,7 +22,7 @@ Ext.define('CoinEX.view.workersGrid', {
         'Ext.grid.View'
     ],
 
-    height: 150,
+    height: 100,
     title: 'My Workers',
     store: 'workerStats',
 

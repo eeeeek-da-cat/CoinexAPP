@@ -24,11 +24,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dataIndex": "price",
+                "dataIndex": "coins",
                 "flex": 1,
-                "text": "Price"
+                "text": "Amount"
             },
-            "designerId": "46628be8-7f49-4d2d-8d1a-3cc28f15d0bb"
+            "designerId": "f6960557-bd3f-4bb8-95ab-abe912ec4be2"
         },
         {
             "type": "Ext.grid.column.Column",
@@ -38,11 +38,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dataIndex": "coins",
+                "dataIndex": "price",
                 "flex": 1,
-                "text": "Amount"
+                "text": "Rate"
             },
-            "designerId": "f6960557-bd3f-4bb8-95ab-abe912ec4be2"
+            "designerId": "46628be8-7f49-4d2d-8d1a-3cc28f15d0bb"
         },
         {
             "type": "Ext.grid.column.Column",

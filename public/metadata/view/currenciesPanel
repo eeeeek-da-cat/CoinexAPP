@@ -8,7 +8,6 @@
     "userConfig": {
         "designer|userAlias": "currencies",
         "designer|userClassName": "currenciesPanel",
-        "disableSelection": true,
         "maxWidth": 200,
         "minWidth": 200,
         "requires": [

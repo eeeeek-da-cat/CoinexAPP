@@ -27,6 +27,7 @@ Ext.define('CoinEX.view.orderHistoryGrid', {
     margin: '0 0 0 5px',
     collapsible: true,
     title: 'History',
+    disableSelection: true,
     store: 'trades',
 
     initComponent: function() {
@@ -37,6 +38,9 @@ Ext.define('CoinEX.view.orderHistoryGrid', {
                 {
                     xtype: 'datecolumn',
                     hidden: true,
+                    maxWidth: 100,
+                    minWidth: 100,
+                    width: 100,
                     dataIndex: 'created_at',
                     text: 'Time',
                     format: 'm-d H:i:s'
@@ -50,7 +54,14 @@ Ext.define('CoinEX.view.orderHistoryGrid', {
                 {
                     xtype: 'gridcolumn',
                     dataIndex: 'rating',
-                    text: 'Rate'
+                    text: 'Rate',
+                    flex: 1
+                },
+                {
+                    xtype: 'gridcolumn',
+                    dataIndex: 'total',
+                    text: 'Total',
+                    flex: 1
                 }
             ],
             viewConfig: {

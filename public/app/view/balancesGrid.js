@@ -26,7 +26,6 @@ Ext.define('CoinEX.view.balancesGrid', {
     width: 250,
     header: false,
     title: 'My Balances',
-    disableSelection: true,
     store: 'balances',
 
     initComponent: function() {
@@ -52,6 +51,7 @@ Ext.define('CoinEX.view.balancesGrid', {
                 }
             ],
             viewConfig: {
+                disableSelection: true,
                 loadMask: false,
                 preserveScrollOnRefresh: true
             }

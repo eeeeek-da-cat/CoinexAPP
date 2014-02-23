@@ -9,6 +9,7 @@
         "collapsible": true,
         "designer|userAlias": "orderhistorygrid",
         "designer|userClassName": "orderHistoryGrid",
+        "disableSelection": true,
         "id": "orderhistorygrid",
         "itemId": "orderhistorygrid",
         "margin": "0 0 0 5px",
@@ -29,7 +30,10 @@
                 "dataIndex": "created_at",
                 "format": "m-d H:i:s",
                 "hidden": true,
-                "text": "Time"
+                "maxWidth": 100,
+                "minWidth": 100,
+                "text": "Time",
+                "width": 100
             },
             "designerId": "37559ef1-4920-49d7-a02e-bdd1ab9c9ec6"
         },
@@ -56,9 +60,24 @@
             "codeClass": null,
             "userConfig": {
                 "dataIndex": "rating",
+                "flex": 1,
                 "text": "Rate"
             },
             "designerId": "cfde0a97-8f9f-44ee-8a95-ae750c16017d"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "total",
+                "flex": 1,
+                "text": "Total"
+            },
+            "designerId": "05ac4b1a-ae58-49ca-a5c2-26f4e75dce3b"
         },
         {
             "type": "Ext.grid.View",

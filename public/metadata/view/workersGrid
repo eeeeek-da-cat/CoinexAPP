@@ -19,7 +19,7 @@
             "    }]        ",
             "}"
         ],
-        "height": 150,
+        "height": 100,
         "store": "workerStats",
         "title": "My Workers"
     },

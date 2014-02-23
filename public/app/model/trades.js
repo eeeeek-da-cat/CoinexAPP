@@ -70,6 +70,15 @@ Ext.define('CoinEX.model.trades', {
             mapping: 'amount',
             name: 'num',
             type: 'float'
+        },
+        {
+            convert: function(v, rec) {
+                var total = rec.get('rating') * rec.get('num');
+                return total.toFixed(8);
+            },
+            mapping: 'amount',
+            name: 'total',
+            type: 'float'
         }
     ],
 

@@ -29,7 +29,6 @@ Ext.define('CoinEX.view.currenciesPanel', {
     minWidth: 200,
     width: 200,
     title: 'Currencies',
-    disableSelection: true,
     store: 'tradePairs',
 
     initComponent: function() {

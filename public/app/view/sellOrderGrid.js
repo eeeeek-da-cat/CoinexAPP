@@ -34,14 +34,14 @@ Ext.define('CoinEX.view.sellOrderGrid', {
             columns: [
                 {
                     xtype: 'gridcolumn',
-                    dataIndex: 'price',
-                    text: 'Price',
+                    dataIndex: 'coins',
+                    text: 'Amount',
                     flex: 1
                 },
                 {
                     xtype: 'gridcolumn',
-                    dataIndex: 'coins',
-                    text: 'Amount',
+                    dataIndex: 'price',
+                    text: 'Rate',
                     flex: 1
                 },
                 {
